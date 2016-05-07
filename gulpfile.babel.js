@@ -148,6 +148,17 @@ gulp.task('lib', () => {
 	}).pipe(gulp.dest('dist'));
 });
 
+gulp.task('data', function () {
+
+	//based on options specified here : http://csv.adaltas.com/parse/
+	var csvParseOptions = {};
+
+	gulp.src('data/**/*.csv')
+		.pipe(csv2json(csvParseOptions))
+		.pipe(rename({extname: '.json'}))
+		.pipe(gulp.dest('dist/data'));
+});
+
 gulp.task('watchTask', () => {
 	gulp.watch(paths.srcCss, ['styles']);
 	// gulp.watch(paths.srcLint, ['lint']);
@@ -159,7 +170,7 @@ gulp.task('deploy', () => {
 });
 
 gulp.task('watch', cb => {
-	runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'styles', 'fonts'], cb);
+	runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'styles', 'fonts','data'], cb);
 });
 
 gulp.task('production', ['clean'], cb => {
@@ -167,5 +178,5 @@ gulp.task('production', ['clean'], cb => {
 	cb();
 });
 gulp.task('build', (cb) => {
-	runSequence('production','browserify', 'lib', 'htmlReplace', 'images', 'fonts', cb);
+	runSequence('production','browserify', 'lib', 'htmlReplace', 'images', 'fonts','data', cb);
 });
