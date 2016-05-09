@@ -42,6 +42,21 @@
 		background: black;
 		border-radius: 16px;
 		z-index: 2;
+
+		&--2{
+			background: rgb(67, 67, 69);
+			top: 40px;
+		}
+
+		&--3{
+			background: rgb(117, 117, 121);
+			top: 64px;
+		}
+
+		&--4{
+			background: rgb(255,255,255);
+			top: 88px;
+		}
 	}
 
 

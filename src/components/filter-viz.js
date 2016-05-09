@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import d3 from 'd3';
 
 let dummyData = [
-	{ slug:'stink-fish', name: 'Stinky Fish', duration: 30, radius: 6, group: 0, },
-	{ slug:'stink-fish', name: 'Stinky Fish 1', duration: 30, radius: 6, group: 1, },
-	{ slug:'stink-fish', name: 'Stinky Fish 2', duration: 30, radius: 6, group: 0, },
-	{ slug:'stink-fish', name: 'Stinky Fish 3', duration: 60, radius: 6, group: 3, },
-	{ slug:'stink-fish', name: 'Stinky Fish 4', duration: 30, radius: 6, group: 2, },
-	{ slug:'stink-fish', name: 'Stinky Fish 5', duration: 10, radius: 6, group: 4, },
-	{ slug:'stink-fish', name: 'Stinky Fish 6', duration: 30, radius: 6, group: 4, },
-	{ slug:'stink-fish', name: 'Stinky Fish 7', duration: 90, radius: 6, group: 5, },
-	{ slug:'stink-fish', name: 'Stinky Fish 8', duration: 30, radius: 6, group: 2, },
-	{ slug:'stink-fish', name: 'Stinky Fish 9', duration: 10, radius: 6, group: 0 }
+	{ slug:'stinky-fish', name: 'Stinky Fish', duration: 30, radius: 6, group: 0, persons: 5 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 1', duration: 30, radius: 6, group: 1, persons: 10 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 2', duration: 30, radius: 6, group: 0, persons: 5 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 3', duration: 60, radius: 6, group: 3, persons: 15 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 4', duration: 30, radius: 6, group: 2, persons: 5 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 5', duration: 10, radius: 6, group: 4, persons: 5 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 6', duration: 30, radius: 6, group: 4, persons: 5 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 7', duration: 90, radius: 6, group: 5, persons: 10 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 8', duration: 30, radius: 6, group: 2, persons: 5 },
+	{ slug:'stinky-fish', name: 'Stinky Fish 9', duration: 10, radius: 6, group: 0, persons: 15 }
 ];
 
 export default class FilterViz extends Component {
@@ -21,9 +21,20 @@ export default class FilterViz extends Component {
 		return function(d){
 
 			var center = {x: window.innerWidth/4, y: window.innerHeight/2};
+			const columns = 2;
+			const rows = 3
 
 			if(this.mode === 'cat'){
-				center.y = d.group/5 * window.innerHeight;
+				center.x = (d.group % 2)/2 * window.innerWidth;
+				center.y = (d.group - (d.group % 2))/3 * (window.innerHeight - 120);
+			}
+
+			if(this.mode === 'time'){
+				center.y = this.timeScale(d.duration);
+			}
+
+			if(this.mode === 'persons'){
+				center.y = this.personScale(d.persons);
 			}
 
 			//generate y
@@ -85,19 +96,32 @@ export default class FilterViz extends Component {
 
 	}
 
-	toggle(){
-		this.mode = 'cat';
+	toggle(mode){
+		this.mode = mode;
+		let scaling = 1;
+
+		if(this.mode === 'cat' || this.mode === 'time' || this.mode === 'persons'){
+			scaling = 0.5;
+		}
 
 		this.nodes = this.data.map((row) => {
-			row.radius = this.radius(row.duration) * 0.5;
+			row.radius = this.radius(row.duration) * scaling;
+
+			if(this.mode === 'persons'){
+				radius = this.radius2(row.persons);
+			}
+
 			return row;
 		});
 
 		this.circles
 			.transition()
 			.attr('r', (d,i) => {
-				return r.radius;
-			})
+				return d.radius;
+			});
+
+		this.force.alpha(0.1);
+
 	}
 
 	componentDidMount(){
@@ -109,6 +133,9 @@ export default class FilterViz extends Component {
 		const height = window.innerHeight;
 
 		this.radius = d3.scale.sqrt().domain([0,90]).range([40, 100]);
+		this.radius2 = d3.scale.sqrt().domain([0,15]).range([40, 100]);
+		this.timeScale = d3.scale.linear().domain([0,90]).range([0, window.innerHeight])
+		this.personScale = d3.scale.linear().domain([0,15]).range([0, window.innerHeight])
 		this.mode = 'none';
 
 		//prepare data
@@ -171,7 +198,10 @@ export default class FilterViz extends Component {
 
 		return (
 			<div className="filter-viz__container">
-				<div className="filter-viz__button" onClick={this.toggle.bind(this)} />
+				<div className="filter-viz__button" onClick={this.toggle.bind(this, 'none')} />
+				<div className="filter-viz__button filter-viz__button--2" onClick={this.toggle.bind(this, 'cat')} />
+				<div className="filter-viz__button filter-viz__button--3" onClick={this.toggle.bind(this, 'time')} />
+				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'persons')} />
 				<svg className="filter-viz__canvas" />
 			</div>
 		);
