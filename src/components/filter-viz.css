@@ -1,6 +1,15 @@
 .filter-viz{
 
-	&__canvas, &__container{
+	&__container{
+		position: absolute;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		background: #fe3f00;
+	}
+
+	&__canvas{
 		position: absolute;
 		top: 0;
 		left: 0;

@@ -7,11 +7,10 @@ export default class Home extends Component {
 	render() {
 		return (
 				<div className="row">
-					<div className="small-12 medium-6 columns">
-						<div>
-							<FilterViz />
-						</div>
-					</div>			
+					<div className="small-12 medium-6 columns filter-viz__column">
+						hello
+						<FilterViz />
+					</div>
 					<div className="small-12 medium-6 columns">
 						<div>
 							<ToolDetail />
