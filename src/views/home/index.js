@@ -8,9 +8,9 @@ export default class Home extends Component {
 		return (
 
 				<div className="row">
-					
+
 						<FilterViz />
-						<ToolDetail />
+						{this.props.children}
 				</div>
 
 		);

@@ -3,19 +3,39 @@ import ReactDOM from 'react-dom';
 import d3 from 'd3';
 
 let dummyData = [
-	{ name: 'Stinky Fish', duration: 30, radius: 6 },
-	{ name: 'Stinky Fish 1', duration: 30, radius: 6 },
-	{ name: 'Stinky Fish 2', duration: 30, radius: 6 },
-	{ name: 'Stinky Fish 3', duration: 60, radius: 6 },
-	{ name: 'Stinky Fish 4', duration: 30, radius: 6 },
-	{ name: 'Stinky Fish 5', duration: 10, radius: 6 },
-	{ name: 'Stinky Fish 6', duration: 30, radius: 6 },
-	{ name: 'Stinky Fish 7', duration: 90, radius: 6 },
-	{ name: 'Stinky Fish 8', duration: 30, radius: 6 },
-	{ name: 'Stinky Fish 9', duration: 10, radius: 6 }
+	{ name: 'Stinky Fish', duration: 30, radius: 6, group: 0, },
+	{ name: 'Stinky Fish 1', duration: 30, radius: 6, group: 1, },
+	{ name: 'Stinky Fish 2', duration: 30, radius: 6, group: 0, },
+	{ name: 'Stinky Fish 3', duration: 60, radius: 6, group: 3, },
+	{ name: 'Stinky Fish 4', duration: 30, radius: 6, group: 2, },
+	{ name: 'Stinky Fish 5', duration: 10, radius: 6, group: 4, },
+	{ name: 'Stinky Fish 6', duration: 30, radius: 6, group: 4, },
+	{ name: 'Stinky Fish 7', duration: 90, radius: 6, group: 5, },
+	{ name: 'Stinky Fish 8', duration: 30, radius: 6, group: 2, },
+	{ name: 'Stinky Fish 9', duration: 10, radius: 6, group: 0 }
 ];
 
 export default class FilterViz extends Component {
+
+	moveToCat(alpha){
+		return function(d){
+
+			var center = {x: window.innerWidth/2, y: window.innerHeight/2};
+
+			if(this.mode){
+				console.log('other')
+				center.x = 0;
+				center.y = 4/d.group * window.innerHeight;
+			}
+
+			//generate y
+			// var y = main.height * ((d.value / main.totals[d.group])*0.1) + main.height*0.5;
+
+			d.x = d.x + (center.x - d.x) * 0.1 * alpha * 1.5;
+			d.y = d.y + (center.y - d.y) * 0.1 * alpha * 1.9;
+
+		};
+	}
 
 	collide(alpha){
 
@@ -54,7 +74,7 @@ export default class FilterViz extends Component {
 
 		this.circles
 			.each(this.collide(e.alpha).bind(this))
-			// .each(this.moveToCat(e.alpha))
+			// .each(this.moveToCat(e.alpha).bind(this))
 			.attr('cx', function(d,i) { return d.x; })
 			.attr('cy', function(d,i) { return d.y; });
 
@@ -62,6 +82,11 @@ export default class FilterViz extends Component {
 			.attr('x', function(d,i) { return d.x; })
 			.attr('y', function(d,i) { return d.y; });
 
+	}
+
+	toggle(){
+		this.mode = true;
+		console.log(this);
 	}
 
 	componentDidMount(){
@@ -131,6 +156,7 @@ export default class FilterViz extends Component {
 
 		return (
 			<div className="filter-viz__container">
+				<div className="filter-viz__button" onClick={this.toggle.bind(this)} />
 				<svg className="filter-viz__canvas" />
 			</div>
 		);
