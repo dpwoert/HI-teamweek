@@ -62,10 +62,9 @@ export default class ToolDetail extends Component {
 						<hr />
 						<div className="row">
 							<div className="small-12 columns">
-								<Step />
-								<Step />
-								<Step />
-								<Step />
+								{data.steps.map((step, i) => {
+									return <Step data={step} number={i+1} key={i} />
+								})}
 							</div>
 						</div>
 					</div>
