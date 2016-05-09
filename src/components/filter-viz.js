@@ -10,7 +10,9 @@ export default class FilterViz extends Component {
 	render() {
 
 		return (
-			<div />
+			<div className="filter-viz__container">
+				<canvas className="filter-viz__canvas" />
+			</div>
 		);
 	}
 }
