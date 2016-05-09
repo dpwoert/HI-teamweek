@@ -9,12 +9,14 @@ export default class Home extends Component {
 			<div className="media-object">
 			  <div className="media-object-section">
 			    <div className="thumbnail">
-			      <img src= "assets/img/media-object/avatar-1.jpg" />
+			      <img src= "images/stinkyfish.png" />
 			    </div>
 			  </div>
 			  <div className="media-object-section">
-			    <h1>Marshmallow Challenge</h1>
-			    <p>Im going to improvise. Listen, theres something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+				    <h3>Marshmallow Challenge</h3>
+				    <h5>An activity about collaboration which teams compete to build a structure 
+				    spaghetti and a marshmallow</h5>
+				    <p>A team­building activity which teams must compete to build the tallest free­standing structure out of twenty sticks of spaghetti, one yard of tape, one yard of string, and one marshmallow. It emphasizes group communication,leadership dynamics, collaboration, innovation and problem solving strategy. The Marshmallow Challenge was developed by Tom Wujec, who has done the activity hundreds of groups around the world. Visit the Marshmallow Challenge website more information.</p>
 			  </div>
 			</div>
 				<Step />
