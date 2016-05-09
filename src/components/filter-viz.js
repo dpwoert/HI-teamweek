@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom';
 export default class FilterViz extends Component {
 
 	componentDidMount(){
-		const video = ReactDOM.findDOMNode(this);
+		const container = ReactDOM.findDOMNode(this);
+		const canvas = container.querySelector('.filter-viz__canvas');
+
+		
 	}
 
 	render() {
