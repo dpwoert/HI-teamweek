@@ -6,16 +6,18 @@ export default class Home extends Component {
 
 	render() {
 		return (
-			<div className="home__container">
-
-				<div>
-					<FilterViz />
+				<div className="row">
+					<div className="small-12 medium-6 columns">
+						<div>
+							<FilterViz />
+						</div>
+					</div>			
+					<div className="small-12 medium-6 columns">
+						<div>
+							<ToolDetail />
+						</div>
+					</div>
 				</div>
-				<div>
-					<ToolDetail />
-				</div>
-
-			</div>
 		);
 	}
 }
