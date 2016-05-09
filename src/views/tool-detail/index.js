@@ -5,18 +5,44 @@ export default class Home extends Component {
 
 	render() {
 		return (
-			<div>
-			<div className="media-object">
-			  <div className="media-object-section">
-			    <div className="thumbnail">
-			      <img src= "assets/img/media-object/avatar-1.jpg" />
-			    </div>
-			  </div>
-			  <div className="media-object-section">
-			    <h1>Marshmallow Challenge</h1>
-			    <p>Im going to improvise. Listen, theres something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
-			  </div>
-			</div>
+			<div className="tool-detail">
+				<div className="media-object">
+					    <div className="thumbnail">
+					      <img src= "images/stinkyfish.png" />
+					    </div>
+						<div className="media-object-section">
+						    <h3>Marshmallow Challenge</h3>
+						    <h5 className="subheader">An activity about collaboration which teams compete to build a structure 
+						    spaghetti and a marshmallow</h5>
+						    <p>A team­building activity which teams must compete to build the tallest free­standing structure out of twenty sticks of spaghetti, one yard of tape, one yard of string, and one marshmallow. It emphasizes group communication,leadership dynamics, collaboration, innovation and problem solving strategy. The Marshmallow Challenge was developed by Tom Wujec, who has done the activity hundreds of groups around the world. Visit the Marshmallow Challenge website more information.</p>
+						</div>
+				</div>
+				<hr />
+					<div className="row meta">
+						<div className="small-4 columns">
+							<h6>Time</h6>
+							<p>XX minutes</p>
+						</div>
+						<div className="small-4 columns">
+							<h6>Group Size</h6>
+							<p>Medium</p>
+						</div>
+						<div className="small-4 columns">
+							<h6>Materials</h6>
+							<p>stuff</p>
+						</div>
+					</div>
+					<div className="row meta">
+						<div className="small-4 columns">
+							<h6>Experience Level</h6>
+							<p>Low</p>
+						</div>
+						<div className="small-4 columns end">
+							<h6>Comfort Zone</h6>
+							<p>Safe</p>
+						</div>
+					</div>
+				<hr />
 				<Step />
 			</div>
 		);
