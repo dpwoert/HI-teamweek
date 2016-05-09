@@ -20,6 +20,7 @@
 			text-anchor: middle;
 			alignment-baseline: middle;
 
+			font-size: 11px;
 			font-weight: bold;
 			font-family: helvetica, sans-serif;
 
@@ -40,6 +41,7 @@
 		height: 16px;
 		background: black;
 		border-radius: 16px;
+		z-index: 2;
 	}
 
 

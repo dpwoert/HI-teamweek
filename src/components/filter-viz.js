@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import d3 from 'd3';
 
 let dummyData = [
-	{ name: 'Stinky Fish', duration: 30, radius: 6, group: 0, },
-	{ name: 'Stinky Fish 1', duration: 30, radius: 6, group: 1, },
-	{ name: 'Stinky Fish 2', duration: 30, radius: 6, group: 0, },
-	{ name: 'Stinky Fish 3', duration: 60, radius: 6, group: 3, },
-	{ name: 'Stinky Fish 4', duration: 30, radius: 6, group: 2, },
-	{ name: 'Stinky Fish 5', duration: 10, radius: 6, group: 4, },
-	{ name: 'Stinky Fish 6', duration: 30, radius: 6, group: 4, },
-	{ name: 'Stinky Fish 7', duration: 90, radius: 6, group: 5, },
-	{ name: 'Stinky Fish 8', duration: 30, radius: 6, group: 2, },
-	{ name: 'Stinky Fish 9', duration: 10, radius: 6, group: 0 }
+	{ slug:'stink-fish', name: 'Stinky Fish', duration: 30, radius: 6, group: 0, },
+	{ slug:'stink-fish', name: 'Stinky Fish 1', duration: 30, radius: 6, group: 1, },
+	{ slug:'stink-fish', name: 'Stinky Fish 2', duration: 30, radius: 6, group: 0, },
+	{ slug:'stink-fish', name: 'Stinky Fish 3', duration: 60, radius: 6, group: 3, },
+	{ slug:'stink-fish', name: 'Stinky Fish 4', duration: 30, radius: 6, group: 2, },
+	{ slug:'stink-fish', name: 'Stinky Fish 5', duration: 10, radius: 6, group: 4, },
+	{ slug:'stink-fish', name: 'Stinky Fish 6', duration: 30, radius: 6, group: 4, },
+	{ slug:'stink-fish', name: 'Stinky Fish 7', duration: 90, radius: 6, group: 5, },
+	{ slug:'stink-fish', name: 'Stinky Fish 8', duration: 30, radius: 6, group: 2, },
+	{ slug:'stink-fish', name: 'Stinky Fish 9', duration: 10, radius: 6, group: 0 }
 ];
 
 export default class FilterViz extends Component {
@@ -20,12 +20,10 @@ export default class FilterViz extends Component {
 	moveToCat(alpha){
 		return function(d){
 
-			var center = {x: window.innerWidth/2, y: window.innerHeight/2};
+			var center = {x: window.innerWidth/4, y: window.innerHeight/2};
 
-			if(this.mode){
-				console.log('other')
-				center.x = 0;
-				center.y = 4/d.group * window.innerHeight;
+			if(this.mode === 'cat'){
+				center.y = d.group/5 * window.innerHeight;
 			}
 
 			//generate y
@@ -34,7 +32,7 @@ export default class FilterViz extends Component {
 			d.x = d.x + (center.x - d.x) * 0.1 * alpha * 1.5;
 			d.y = d.y + (center.y - d.y) * 0.1 * alpha * 1.9;
 
-		};
+		}.bind(this);
 	}
 
 	collide(alpha){
@@ -74,7 +72,10 @@ export default class FilterViz extends Component {
 
 		this.circles
 			.each(this.collide(e.alpha).bind(this))
-			// .each(this.moveToCat(e.alpha).bind(this))
+			.each(this.moveToCat(e.alpha).bind(this))
+			.attr('r', (d,i) => {
+				return d.radius;
+			})
 			.attr('cx', function(d,i) { return d.x; })
 			.attr('cy', function(d,i) { return d.y; });
 
@@ -85,8 +86,18 @@ export default class FilterViz extends Component {
 	}
 
 	toggle(){
-		this.mode = true;
-		console.log(this);
+		this.mode = 'cat';
+
+		this.nodes = this.data.map((row) => {
+			row.radius = this.radius(row.duration) * 0.5;
+			return row;
+		});
+
+		this.circles
+			.transition()
+			.attr('r', (d,i) => {
+				return r.radius;
+			})
 	}
 
 	componentDidMount(){
@@ -98,6 +109,7 @@ export default class FilterViz extends Component {
 		const height = window.innerHeight;
 
 		this.radius = d3.scale.sqrt().domain([0,90]).range([40, 100]);
+		this.mode = 'none';
 
 		//prepare data
 		this.nodes = dummyData.map((row) => {
@@ -133,6 +145,9 @@ export default class FilterViz extends Component {
 			.call(this.force.drag)
 			// .on('mouseover', main.tooltip)
 			// .on('mouseout', main.hideTooltip);
+			.on('click', (d) => {
+				this.props.history.push('/' + d.slug);
+			})
 
 		this.texts = svg.selectAll('text')
 			.data(this.nodes)

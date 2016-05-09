@@ -5,11 +5,14 @@ import ToolDetail from '../tool-detail';
 export default class Home extends Component {
 
 	render() {
+
+		console.log(this.props)
+
 		return (
 
 				<div className="row">
 
-						<FilterViz />
+						<FilterViz {...this.props} />
 						{this.props.children}
 				</div>
 
