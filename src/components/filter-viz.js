@@ -71,30 +71,47 @@ export default class FilterViz extends Component {
 		this.radius = d3.scale.sqrt().domain([0,90]).range([0, 90]);
 
 		//prepare data
-		this.data = dummyData.map((row) => {
+		this.nodes = dummyData.map((row) => {
 			row.radius = this.radius(row.duration);
 			row.x = 0;
 			row.y = 0;
 			return row;
 		});
 
+		this.data = [ ...this.nodes ];
+
+		//add mouse
+		this.mouse = {
+			// fixed: true,
+			name: 'mouse',
+			radius: 30
+		};
+		this.data.push(this.mouse);
+
 		this.force = d3.layout.force()
 			.nodes(this.data)
 			// .links(this.links)
-			.friction(0.9)
+			// .friction(0.9)
 			.size([width, height])
 			.on('tick', this.tick.bind(this))
 			.start();
 
 		this.circles = svg.selectAll('circle')
-			.data(this.force.nodes())
+			.data(this.nodes)
 			.enter()
 			.append('circle')
 			.attr('r', function(d){ return d.radius; })
 			.style('fill', function(d){ return '#fff'; })
-			// .call(this.force.drag)
+			.call(this.force.drag)
 			// .on('mouseover', main.tooltip)
 			// .on('mouseout', main.hideTooltip);
+
+		window.addEventListener('mousemove', (evt) => {
+			this.mouse.x = evt.clientX;
+			this.mouse.y = evt.clientY;
+			this.mouse.px = evt.clientX;
+			this.mouse.py = evt.clientY;
+		});
 
 	}
 
