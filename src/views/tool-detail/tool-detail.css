@@ -1,7 +1,14 @@
+*, h1, h2, h3, h4, h5, h6{
+  font-family: "Roboto", Helvetica Neue,Helvetica, Arial,sans-serif
+}
 .thumbnail {
     box-shadow: none; 
-    transition: none
+    transition: none;
 
+}
+.thumbnail img:hover{
+  box-shadow: none; 
+    transition: none;
 }
 .features {
   text-align: center; }
@@ -32,6 +39,7 @@
   width: 50%;
   height: 100%;
   overflow: scroll;
+  padding: 1em;
 }
 
 /*set media query for mobile at 100%*/
