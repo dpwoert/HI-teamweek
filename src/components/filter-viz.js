@@ -21,8 +21,8 @@ export default class FilterViz extends Component {
 
 		var quadtree = d3.geom.quadtree(this.data);
 		return function(d) {
-			// var r = d.radius + radius.domain()[1] + padding,
-			var r = d.radius + this.radius.domain()[1],
+			var r = d.radius + this.radius.domain()[1] + 50,
+			// var r = d.radius + this.radius.domain()[1],
 			nx1 = d.x - r,
 			nx2 = d.x + r,
 			ny1 = d.y - r,
@@ -33,7 +33,7 @@ export default class FilterViz extends Component {
 					y = d.y - quad.point.y,
 					l = Math.sqrt(x * x + y * y),
 					// r = d.radius + quad.point.radius + (d.color !== quad.point.color) * padding;
-					r = d.radius + quad.point.radius + (d.color !== quad.point.color);
+					r = d.radius + quad.point.radius + (d.color !== quad.point.color) + 10;
 					if (l < r) {
 						l = (l - r) / l * alpha;
 						d.x -= x *= l;
@@ -58,6 +58,10 @@ export default class FilterViz extends Component {
 			.attr('cx', function(d,i) { return d.x; })
 			.attr('cy', function(d,i) { return d.y; });
 
+		this.texts
+			.attr('x', function(d,i) { return d.x; })
+			.attr('y', function(d,i) { return d.y; });
+
 	}
 
 	componentDidMount(){
@@ -68,7 +72,7 @@ export default class FilterViz extends Component {
 		const width = window.innerWidth / 2;
 		const height = window.innerHeight;
 
-		this.radius = d3.scale.sqrt().domain([0,90]).range([0, 90]);
+		this.radius = d3.scale.sqrt().domain([0,90]).range([40, 100]);
 
 		//prepare data
 		this.nodes = dummyData.map((row) => {
@@ -82,9 +86,8 @@ export default class FilterViz extends Component {
 
 		//add mouse
 		this.mouse = {
-			// fixed: true,
 			name: 'mouse',
-			radius: 30
+			radius: 10
 		};
 		this.data.push(this.mouse);
 
@@ -106,11 +109,16 @@ export default class FilterViz extends Component {
 			// .on('mouseover', main.tooltip)
 			// .on('mouseout', main.hideTooltip);
 
+		this.texts = svg.selectAll('text')
+			.data(this.nodes)
+			.enter()
+			.append('text')
+			.text((d) => { return d.name });
+
 		window.addEventListener('mousemove', (evt) => {
 			this.mouse.x = evt.clientX;
 			this.mouse.y = evt.clientY;
-			this.mouse.px = evt.clientX;
-			this.mouse.py = evt.clientY;
+			// this.force.alpha(0.1);
 		});
 
 	}
