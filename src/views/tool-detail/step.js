@@ -5,7 +5,7 @@ export default class Step extends Component {
 	render() {
 		return (
 			<div>
-
+			step
 			</div>
 		);
 	}
