@@ -15,7 +15,7 @@ export default {
 	exp: 3,
 
 	materials: [
-		'siscors',
+		'paper',
 		'pencil'
 	],
 
