@@ -35,6 +35,6 @@ export default {
 		{label: "hyper island toolbox", url: 'http://toolbox.hyperisland.com/'}
 	],
 
-	attachment: 'url.jpg'
+	attachment: 'attachments/02_Energizers.pdf'
 
 };
