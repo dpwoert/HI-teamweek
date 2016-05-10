@@ -29,18 +29,18 @@ export default class FilterViz extends Component {
 
 				var p1 = {
 					x: window.innerWidth/4,
-					y: window.innerHeight/4
+					y: window.innerHeight*0.25
 				};
 				var p2 = {
-					x: (window.innerWidth/2) * 0.33,
-					y: window.innerHeight*0.75
+					x: (window.innerWidth/2) * 0.2,
+					y: window.innerHeight*0.8
 				};
 				var p3 = {
-					x: (window.innerWidth/2) * 0.66,
-					y: window.innerHeight*0.75
+					x: (window.innerWidth/2) * 0.8,
+					y: window.innerHeight*0.8
 				};
 
-				switch(this.comfortZone){
+				switch(d.comfortZone){
 					case 1: center = p1; break;
 					case 2: center = p2; break;
 					case 3: center = p3; break;
