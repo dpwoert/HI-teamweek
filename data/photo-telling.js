@@ -1,6 +1,7 @@
 export default {
 	name: 'Phototelling',
 	slug: 'photo-telling',
+	icon: 'images/icon-name.svg',
 	byline: 'An activity about sharing in which individuals tell stories around photos.',
 	description: 'An ice breaker activity in which team members share a random photo from their phone and talk about it. Team members are encouraged to follow up with questions and conversations around the photo. The goal of this exercise: To get to know your new team through sharing a short uncurated story about yourself in a fun and easy way.',
 	category: 0,
