@@ -125,6 +125,10 @@ export default class FilterViz extends Component {
 			scaling = 0.5;
 		}
 
+		if(this.mode === 'comfort'){
+			scaling = 0.7;
+		}
+
 		if(this.mode === 'persons'){
 			alpha = 0.2;
 		}
