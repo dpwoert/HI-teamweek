@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/home/home.css"],"names":[],"mappings":"AAEC,eACC,SAAW,CACX","file":"views/home/home.css","sourcesContent":[".home{\n\n\t&__message{\n\t\tcolor: red;\n\t}\n\n}\n"],"sourceRoot":"/source/"}
