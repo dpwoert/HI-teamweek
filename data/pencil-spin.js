@@ -2,8 +2,7 @@ export default {
 	name: 'Pencil Spin',
 	slug: 'pencil-spin',
 	byline: 'A fun and simple tool to start facilitate a good open team culture that will be used for breaks and bonding.',
-	description: 'A teambuilding activity to help team members discuss their activities and what they love doing outside of the team environment. Each team member writes down an activity for both a 5-10 minute break or a long team bonding activity. A pencil or pen is spun in the middle to make a choice . WIth minimal materials and using funny activities teams can create an interactive way to bond and take breaks. This simple idea takes away the guesswork and makes team bonding easy, fun and simple.
-',
+	description: 'A teambuilding activity to help team members discuss their activities and what they love doing outside of the team environment. Each team member writes down an activity for both a 5-10 minute break or a long team bonding activity. A pencil or pen is spun in the middle to make a choice . WIth minimal materials and using funny activities teams can create an interactive way to bond and take breaks. This simple idea takes away the guesswork and makes team bonding easy, fun and simple.',
 	category: 4,
 
 	//from - to

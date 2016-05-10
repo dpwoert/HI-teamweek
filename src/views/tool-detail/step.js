@@ -8,12 +8,16 @@ export default class Step extends Component {
 		const data = this.props.data;
 		const number = this.props.number;
 
+		if(data instanceof Array){
+			data.join('\n');
+		}
+
 		return (
 			<div>
 				<div className="row">
 					<div className="small-12 columns">
 						<h4>Step {number}</h4>
-						<p><ReactMarkdown source={data} /></p>
+						<ReactMarkdown source={data} />
 					</div>
 				</div>
 			</div>
