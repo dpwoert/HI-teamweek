@@ -167,9 +167,9 @@ export default class FilterViz extends Component {
 		const width = window.innerWidth / 2;
 		const height = window.innerHeight;
 
-		this.radius = d3.scale.sqrt().domain([15,45]).range([40, 100]);
+		this.radius = d3.scale.sqrt().domain([15,110]).range([40, 100]);
 		this.radius2 = d3.scale.sqrt().domain([5,15]).range([40, 80]);
-		this.timeScale = d3.scale.linear().domain([15,45]).range([0, window.innerHeight])
+		this.timeScale = d3.scale.linear().domain([15,110]).range([0, window.innerHeight])
 		this.personScale = d3.scale.linear().domain([5,15]).range([50, window.innerHeight])
 		this.mode = 'none';
 
@@ -232,6 +232,8 @@ export default class FilterViz extends Component {
 			this.force.size([window.innerWidth/2, window.innerHeight]).resume();
 		});
 
+		window.__force = this.force;
+
 	}
 
 	componentWillUnmount(){
@@ -250,7 +252,7 @@ export default class FilterViz extends Component {
 
 				<div className="filter-viz__legend">
 					<div className="filter-viz__legend__start">15min</div>
-					<div className="filter-viz__legend__end">45min</div>
+					<div className="filter-viz__legend__end">120min</div>
 					<div className="filter-viz__legend__line"></div>
 				</div>
 

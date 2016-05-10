@@ -29,7 +29,7 @@ export default class ToolDetail extends Component {
 
 	getReferences(data){
 
-		if(data.hyperlinks.length === 0){
+		if(!data.hyperlinks || data.hyperlinks == '' || data.hyperlinks.length === 0){
 			return undefined;
 		}
 
@@ -41,6 +41,10 @@ export default class ToolDetail extends Component {
 				})}
 			</div>
 		);
+	}
+
+	resumeViz(){
+		window.__force.resume();
 	}
 
 	render() {
@@ -59,7 +63,7 @@ export default class ToolDetail extends Component {
 				<div className="pattern-1" />
 				<div className="pattern-2" />
 
-				<Link to="/" className="link-home" />
+				<Link to="/" className="link-home" onClick={this.resumeViz} />
 
 				<div className="row">
 					<div className="small-12 columns">
