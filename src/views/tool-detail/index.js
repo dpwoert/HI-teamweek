@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import tools from '../../../data/test-data.js';
+import tools from '../../../data/data.js';
 import Step from './step.js';
 
 export default class ToolDetail extends Component {

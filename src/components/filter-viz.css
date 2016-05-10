@@ -25,6 +25,7 @@
 			font-family: helvetica, sans-serif;
 
 			cursor: pointer;
+			pointer-events: none;
 		}
 
 		circle{
@@ -37,25 +38,31 @@
 		position: absolute;
 		left: 16px;
 		top: 16px;
-		width: 16px;
-		height: 16px;
+		width: 22px;
+		height: 22px;
 		background: black;
 		border-radius: 16px;
 		z-index: 2;
 
+		background-color: white;
+		background-image: url('../images/no-filter.svg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 60%;
+
 		&--2{
-			background: rgb(67, 67, 69);
-			top: 40px;
+			background-image: url('../images/categories.svg');
+			top: 46px;
 		}
 
 		&--3{
-			background: rgb(117, 117, 121);
-			top: 64px;
+			background-image: url('../images/time.svg');
+			top: 76px;
 		}
 
 		&--4{
-			background: rgb(255,255,255);
-			top: 88px;
+			background-image: url('../images/users.svg');
+			top: 106px;
 		}
 	}
 
