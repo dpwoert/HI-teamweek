@@ -6,7 +6,7 @@ export default class ListView extends Component {
 
 		return (
 
-				<div className="row">
+				<div className="list-view left-pane">
 				</div>
 
 		);

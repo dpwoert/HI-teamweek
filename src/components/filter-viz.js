@@ -32,7 +32,7 @@ export default class FilterViz extends Component {
 					y: window.innerHeight*0.25
 				};
 				var p2 = {
-					x: (window.innerWidth/2) * 0.2,
+					x: (window.innerWidth/2) * 0.1,
 					y: window.innerHeight*0.8
 				};
 				var p3 = {
@@ -204,6 +204,10 @@ export default class FilterViz extends Component {
 			this.mouse.x = evt.clientX;
 			this.mouse.y = evt.clientY;
 			// this.force.alpha(0.1);
+		});
+
+		window.addEventListener('resize', (evt) => {
+			this.force.size([window.innerWidth/2, window.innerHeight]).resume();
 		});
 
 	}

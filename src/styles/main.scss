@@ -13,6 +13,18 @@ html, body{
 
 }
 
+.left-pane{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+
+	display: none;
+
+	@media screen and (max-width: 800px) {
+		display: block;
+	}
+}
+
 .right-pane{
 	position: absolute;
 	left: 50%;
@@ -37,3 +49,4 @@ html, body{
 @import "../views/home/home.css";
 @import "../views/about/about.css";
 @import "../views/tool-detail/tool-detail.css";
+@import "../views/list-view/list-view.css";

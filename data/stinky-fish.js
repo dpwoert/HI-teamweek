@@ -20,7 +20,7 @@ export default {
 	],
 
 	//1: low, 2: mid, 3: high
-	comfortZone: 3,
+	comfortZone: 1,
 
 	steps: [
 		'jnbngknbjn',
