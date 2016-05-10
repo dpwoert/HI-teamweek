@@ -33,14 +33,32 @@ export default class ToolDetail extends Component {
 			return undefined;
 		}
 
+		console.log(data.hyperlinks)
+
 		return (
 			<div>
 				<h4>References</h4>
 				{data.hyperlinks.map((link, i) => {
-					return <p><a href={link.url} target="_blank" key={i}>{link.label}</a></p>
+					return <p key={i}><a href={link.url} target="_blank">{link.label}</a></p>
 				})}
 			</div>
 		);
+	}
+
+	getMaterials(data){
+
+		if(!data.materials || data.materials == '' || data.materials.length === 0){
+			return <p>no materials needed</p>
+		}
+
+		return (
+			<ul className="material-list">
+				{data.materials.map((material, i) => {
+					return <li key={i}>{material}</li>
+				})}
+			</ul>
+		)
+
 	}
 
 	resumeViz(){
@@ -93,11 +111,7 @@ export default class ToolDetail extends Component {
 								</div>
 								<div className="small-4 columns">
 									<h6>Materials</h6>
-									<ul className="material-list">
-										{data.materials.map((material, i) => {
-											return <li key={i}>{material}</li>
-										})}
-									</ul>
+									{this.getMaterials(data)}
 								</div>
 							</div>
 							<div className="row meta">
