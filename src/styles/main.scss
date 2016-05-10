@@ -13,6 +13,18 @@ html, body{
 
 }
 
+.right-pane{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	overflow: scroll;
+	padding: 1em;
+}
+
+/*set media query for mobile at 100%*/
+
 @import "../components/filter-viz.css";
 
 @import "../views/home/home.css";

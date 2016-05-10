@@ -2,12 +2,12 @@
   font-family: "Roboto", Helvetica Neue,Helvetica, Arial,sans-serif
 }
 .thumbnail {
-    box-shadow: none; 
+    box-shadow: none;
     transition: none;
 
 }
 .thumbnail img:hover{
-  box-shadow: none; 
+  box-shadow: none;
     transition: none;
 }
 .features {
@@ -32,14 +32,3 @@
 .meta h6{
   font-weight: bold;
 }
-.tool-detail{
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  overflow: scroll;
-  padding: 1em;
-}
-
-/*set media query for mobile at 100%*/

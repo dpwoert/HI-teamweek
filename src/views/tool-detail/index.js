@@ -24,7 +24,7 @@ export default class ToolDetail extends Component {
 		data = data[0] || {};
 
 		return (
-			<div className="tool-detail">
+			<div className="tool-detail right-pane">
 				<div className="row">
 					<div className="small-12 columns">
 						<div className="row">
@@ -45,7 +45,7 @@ export default class ToolDetail extends Component {
 							<div className="row meta">
 								<div className="small-4 columns">
 									<h6>Time</h6>
-									<p>{data.time[0]}-{data.time[1]}</p>
+									<p>{data.time[0]}-{data.time[1]}min</p>
 								</div>
 								<div className="small-4 columns">
 									<h6>Group Size</h6>
