@@ -1,6 +1,7 @@
 export default {
 	name: 'Skype-oke',
 	slug: 'skype-oke',
+	icon: 'images/06.svg',
 	byline: 'A team activity to focus and synchronise the team. This is done by singing Karaoke over Skype or google hangout.',
 	description: 'Teams often lose focus during projects, this is a group exercise to regain focus, encourage active listening, and collaborate with your teammates in a fun way. The group sings one song karoake style, each team member singing one line after the next, this is all done over google hangout or Skype! This task is aimed at remote workers, however it can also be adapted for the physical workplace.',
 	category: 2,

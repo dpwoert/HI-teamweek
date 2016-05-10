@@ -1,6 +1,7 @@
 export default {
 	name: 'That\'s Me!',
 	slug: 'thats-me',
+	icon: 'images/01.svg',
 	byline: 'A group activity for the first time a new team gets together to help them to know their teammates in a fun way.',
 	description: 'Inspired by Milton Bradley’s game “Guess Who?”, it allows the team members to learn each other\'s names in an interactive and fun way. The idea is to create a memorable bond between team members upon their first meeting of each other. Players must find the person of a selected name by asking various “yes” or “no” questions such as, "Does this person wear glasses?" The people who don\'t match the description sit down until all but one is left standing, revealing the selected person.',
 	category: 0,

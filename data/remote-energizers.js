@@ -1,6 +1,7 @@
 export default {
 	name: 'Remote Energizers',
 	slug: 'remote-energizers',
+	icon: 'images/03.svg',
 	byline: 'These remote energizers use a Slack bot in your team Slack channel so that you can ask your bot to generate an activity for when your remote team needs an energy boost.',
 	description: 'Energizers are great when your team needs a boost. They are suitable to use at any point throughout the day, or at the beginning of a meeting. Energizers promote positive interaction between team members, help them to bond and effectively boost enthusiasm and morale. Download the Slack bot and add it to your team Slack account. Then, when you feel like your remote team needs an occasion to connect or a boost in concentration, you can ask your bot to send you an idea for a fun energizer.',
 	category: 0,
