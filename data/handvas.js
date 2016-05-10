@@ -27,10 +27,10 @@ export default {
 
 		[
 			'Write one or a few words in each finger (~5 mins). ',
-			'* Thumb: strengths (e.g. critical thinker, good listener) Index finger – goals (e.g. thinking tools, portfolio pieces)',
-			'* Middle finger: what annoys you (e.g. lack of trust); Ring finger – what makes you loyal (e.g. commitment)',
-			'* Pinky finger: what makes you feel small (e.g. being condescended and shut down)',
-			'* Palm: something you want to open up about (e.g. feeling stressed about another deadline)'
+			'* _Thumb:_ strengths (e.g. critical thinker, good listener) Index finger – goals (e.g. thinking tools, portfolio pieces)',
+			'* _Middle finger:_ what annoys you (e.g. lack of trust); Ring finger – what makes you loyal (e.g. commitment)',
+			'* _Pinky finger:_ what makes you feel small (e.g. being condescended and shut down)',
+			'* _Palm:_ something you want to open up about (e.g. feeling stressed about another deadline)'
 		],
 
 		'Team members share their hands with the other team members (3 mins per hand)',
