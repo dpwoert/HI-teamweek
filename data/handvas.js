@@ -33,11 +33,9 @@ export default {
 			'* Palm: something you want to open up about (e.g. feeling stressed about another deadline)'
 		],
 
-
 		'Team members share their hands with the other team members (3 mins per hand)',
 		'The team discusses how to work together in order to enable as many strengths and avoid as many annoyances as possible during the upcoming project (15 mins).',
-		'To make the outcome memorable and to anchor the important things having been shared, the team comes up with a catchy “film” title that represents the team culture (3 mins).']
-
+		'To make the outcome memorable and to anchor the important things having been shared, the team comes up with a catchy “film” title that represents the team culture (3 mins).'
 
 	],
 
