@@ -6,10 +6,10 @@ export default {
 	category: 1,
 
 	//from - to
-	time: [15],
+	time: [15, 20],
 
 	//undefined for any amount of people, otherwise a number
-	group: undefined || [2,5],
+	group: [2,5],
 
 	//1: low, 2: mid, 3: high
 	exp: 2,

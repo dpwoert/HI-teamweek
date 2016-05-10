@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { withRouter } from 'react-router'
 import ReactDOM from 'react-dom';
 import d3 from 'd3';
 import data from '../../data/data.js';
@@ -10,11 +11,13 @@ export default class FilterViz extends Component {
 
 			var center = {x: window.innerWidth/4, y: window.innerHeight/2};
 			const columns = 2;
-			const rows = 3
+			const rows = 2;
 
 			if(this.mode === 'cat'){
 				center.x = (d.category % 2)/2 * window.innerWidth;
 				center.y = (d.category - (d.category % 2))/3 * (window.innerHeight - 120);
+
+				center.y += window.innerHeight * 0.2;
 			}
 
 			if(this.mode === 'time'){
@@ -29,7 +32,7 @@ export default class FilterViz extends Component {
 
 				var p1 = {
 					x: window.innerWidth/4,
-					y: window.innerHeight*0.25
+					y: window.innerHeight*0.15
 				};
 				var p2 = {
 					x: (window.innerWidth/2) * 0.1,
@@ -145,10 +148,18 @@ export default class FilterViz extends Component {
 
 		this.force.alpha(alpha);
 
-		//legend?
+		//legends
+		document.querySelector('.filter-viz__categories').style.opacity = 0;
+		if(this.mode === 'cat'){
+			document.querySelector('.filter-viz__categories').style.opacity = 1;
+		}
 		document.querySelector('.filter-viz__legend').style.opacity = 0;
 		if(this.mode === 'time'){
 			document.querySelector('.filter-viz__legend').style.opacity = 1;
+		}
+		document.querySelector('.filter-viz__comfort-zone').style.opacity = 0;
+		if(this.mode === 'comfort'){
+			document.querySelector('.filter-viz__comfort-zone').style.opacity = 1;
 		}
 
 
@@ -162,9 +173,9 @@ export default class FilterViz extends Component {
 		const width = window.innerWidth / 2;
 		const height = window.innerHeight;
 
-		this.radius = d3.scale.sqrt().domain([0,90]).range([40, 100]);
+		this.radius = d3.scale.sqrt().domain([15,110]).range([40, 100]);
 		this.radius2 = d3.scale.sqrt().domain([5,15]).range([40, 80]);
-		this.timeScale = d3.scale.linear().domain([10,90]).range([0, window.innerHeight])
+		this.timeScale = d3.scale.linear().domain([15,110]).range([0, window.innerHeight])
 		this.personScale = d3.scale.linear().domain([5,15]).range([50, window.innerHeight])
 		this.mode = 'none';
 
@@ -176,6 +187,9 @@ export default class FilterViz extends Component {
 			row.y = 0;
 			return row;
 		});
+
+		var extendDuration = d3.extent(this.nodes, (d) => { return d.avgDuration; });
+		console.log(extendDuration)
 
 		this.data = [ ...this.nodes ];
 
@@ -205,6 +219,7 @@ export default class FilterViz extends Component {
 			// .on('mouseout', main.hideTooltip);
 			.on('click', (d) => {
 				this.props.history.push('/' + d.slug);
+				this.force.resume();
 			})
 
 		this.texts = svg.selectAll('text')
@@ -223,6 +238,8 @@ export default class FilterViz extends Component {
 			this.force.size([window.innerWidth/2, window.innerHeight]).resume();
 		});
 
+		window.__force = this.force;
+
 	}
 
 	componentWillUnmount(){
@@ -234,15 +251,28 @@ export default class FilterViz extends Component {
 		return (
 			<div className="filter-viz__container">
 
-				<div className="filter-viz__button" onClick={this.toggle.bind(this, 'none')} />
-				<div className="filter-viz__button filter-viz__button--2" onClick={this.toggle.bind(this, 'cat')} />
-				<div className="filter-viz__button filter-viz__button--3" onClick={this.toggle.bind(this, 'time')} />
-				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'comfort')} />
+				<div className="filter-viz__button" onClick={this.toggle.bind(this, 'none')}><div>no filter</div></div>
+				<div className="filter-viz__button filter-viz__button--2" onClick={this.toggle.bind(this, 'cat')}><div>categories</div></div>
+				<div className="filter-viz__button filter-viz__button--3" onClick={this.toggle.bind(this, 'time')}><div>duration</div></div>
+				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'comfort')}><div>comfort zone</div></div>
 
 				<div className="filter-viz__legend">
-					<div className="filter-viz__legend__start">20min</div>
+					<div className="filter-viz__legend__start">15min</div>
 					<div className="filter-viz__legend__end">120min</div>
 					<div className="filter-viz__legend__line"></div>
+				</div>
+
+				<div className="filter-viz__comfort-zone">
+					<div className="filter-viz__comfort-zone--1">low</div>
+					<div className="filter-viz__comfort-zone--2">medium</div>
+					<div className="filter-viz__comfort-zone--3">high</div>
+				</div>
+
+				<div className="filter-viz__categories">
+					<div className="filter-viz__categories--1">ice breakers</div>
+					<div className="filter-viz__categories--2">feedback & reflection</div>
+					<div className="filter-viz__categories--3">culture development</div>
+					<div className="filter-viz__categories--4">breaks & bonding</div>
 				</div>
 
 				<svg className="filter-viz__canvas" />

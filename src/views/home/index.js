@@ -12,8 +12,8 @@ export default class Home extends Component {
 				<div className="row">
 
 						<FilterViz {...this.props} />
-						<ListView {...this.props} />
 						{this.props.children}
+						<ListView {...this.props} />
 				</div>
 
 		);

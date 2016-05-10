@@ -1,3 +1,31 @@
 .list-view{
 	background: #fe3f00;
+
+	&__block{
+		position: relative;
+		width: 33%;
+		padding-top: 33%;
+		float: left;
+		color: white;
+
+		&:nth-of-type(even){
+			/*background: rgba(254, 63, 0, 0.83);*/
+		}
+
+		div{
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			transform: translateY(-50%);
+		}
+
+		@media screen and (max-width: 400px) {
+			width: 50%;
+			padding-top: 50%;
+		}
+
+	}
+
 }

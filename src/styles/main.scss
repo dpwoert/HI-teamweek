@@ -39,6 +39,8 @@ html, body{
 	background-repeat: no-repeat;
 	background-size: 550px auto;
 
+	min-height: 100vh;
+
 	@media screen and (max-width: 800px) {
 		position: relative;
 		left: 0;

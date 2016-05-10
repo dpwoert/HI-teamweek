@@ -13,6 +13,40 @@ export default class ToolDetail extends Component {
 		}
 	}
 
+	getAttachment(data){
+
+		if(data.attachment === undefined || data.attachment === ''){
+			return undefined;
+		}
+
+		return (
+			<div>
+				<h4>Attachments</h4>
+				<p><a href={data.attachment}>download attachment</a></p>
+			</div>
+		);
+	}
+
+	getReferences(data){
+
+		if(!data.hyperlinks || data.hyperlinks == '' || data.hyperlinks.length === 0){
+			return undefined;
+		}
+
+		return (
+			<div>
+				<h4>References</h4>
+				{data.hyperlinks.map((link, i) => {
+					return <p><a href={link.url} target="_blank" key={i}>{link.label}</a></p>
+				})}
+			</div>
+		);
+	}
+
+	resumeViz(){
+		window.__force.resume();
+	}
+
 	render() {
 
 		const tool = this.props.params.tool;
@@ -29,7 +63,7 @@ export default class ToolDetail extends Component {
 				<div className="pattern-1" />
 				<div className="pattern-2" />
 
-				<Link to="/" className="link-home" />
+				<Link to="/" className="link-home" onClick={this.resumeViz} />
 
 				<div className="row">
 					<div className="small-12 columns">
@@ -86,11 +120,8 @@ export default class ToolDetail extends Component {
 						</div>
 						<div className="row">
 							<div className="small-12 columns">
-								<h6>Attachments</h6>
-								<img src= "images/stinkyfish.png" />
-								<h6>References</h6>
-								<p><a>Hyper Island Toolbox</a></p>
-								
+								{this.getReferences(data)}
+								{this.getAttachment(data)}
 							</div>
 						</div>
 					</div>

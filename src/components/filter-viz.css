@@ -42,31 +42,71 @@
 		position: absolute;
 		left: 16px;
 		top: 16px;
-		width: 22px;
 		height: 22px;
-		background: black;
+		background: white;
 		border-radius: 16px;
 		z-index: 2;
 
-		background-color: white;
-		background-image: url('../images/no-filter.svg');
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: 60%;
+		font-weight: bold;
+		font-size: 10px;
+		line-height: 22px;
+
+		padding-left: 22px;
+		padding-right: 0;
+
+		cursor: pointer;
+
+		div{
+			display: none
+		}
+
+		&:hover{
+			padding-right: 6px;
+		}
+
+		&:hover div{
+			display: block;
+		}
+
+		&:before{
+			content: '';
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 22px;
+			height: 22px;
+			border-radius: 16px;
+			z-index: 2;
+
+			background-color: white;
+			background-image: url('../images/no-filter.svg');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 60%;
+
+		}
 
 		&--2{
-			background-image: url('../images/categories.svg');
 			top: 46px;
+
+			&:before{
+				background-image: url('../images/categories.svg');
+			}
 		}
 
 		&--3{
-			background-image: url('../images/time.svg');
 			top: 76px;
+
+			&:before{
+				background-image: url('../images/time.svg');
+			}
 		}
 
 		&--4{
-			background-image: url('../images/comfort-zone.svg');
 			top: 106px;
+			&:before{
+				background-image: url('../images/comfort-zone.svg');
+			}
 		}
 	}
 
@@ -98,6 +138,81 @@
 			bottom: 32px;
 			background: rgba(255,255,255,0.5);
 			right: 25px;
+		}
+
+	}
+
+	&__comfort-zone{
+
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		pointer-events: none;
+
+
+		div{
+			width: 200px;
+			margin-left: -100px;
+			text-align: center;
+
+			font-weight: bold;
+			font-size: 10px;
+			z-index: 2;
+		}
+
+		&--1{
+			position: absolute;
+			top: 40%;
+			left: 50%;
+		}
+		&--2{
+			position: absolute;
+			bottom: 10%;
+			left: 25%;
+		}
+		&--3{
+			position: absolute;
+			bottom: 10%;
+			left: 75%;
+		}
+
+	}
+
+	&__categories{
+
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		pointer-events: none;
+
+
+		div{
+			width: 200px;
+			margin-left: -100px;
+			text-align: center;
+
+			font-weight: bold;
+			font-size: 10px;
+			z-index: 2;
+		}
+
+		&--1{
+			position: absolute;
+			top: 40%;
+			left: 20%;
+		}
+		&--2{
+			position: absolute;
+			top: 40%;
+			left: 80%;
+		}
+		&--3{
+			position: absolute;
+			bottom: 20%;
+			left: 20%;
+		}
+		&--4{
+			position: absolute;
+			bottom: 20%;
+			left: 80%;
 		}
 
 	}
