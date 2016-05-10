@@ -22,7 +22,8 @@ export default class ListView extends Component {
 				<div className="list-view left-pane">
 
 					{tools.map((tool, i) => {
-						return <Link to={'/' + tool.slug} key={i} className="list-view__block" onClick={this.scrollTo}><div>{tool.name}</div></Link>;
+						const style = { backgroundImage: 'url(' + tool.icon + ')' };
+						return <Link to={'/' + tool.slug} key={i} className="list-view__block" onClick={this.scrollTo}><div>{tool.name}</div><div className="icon" style={style} /></Link>;
 					})}
 
 				</div>

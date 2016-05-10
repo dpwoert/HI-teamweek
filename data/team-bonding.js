@@ -1,6 +1,7 @@
 export default {
 	name: 'Team Bonding',
 	slug: 'team-bonding',
+	icon: 'images/04.svg',
 	byline: 'Team bonding is an important element of a productive workplace. Help your team to foster great culture by connecting outside of the traditional office setting using our team bonding exercises.',
 	description: 'Team bonding activities promote fun and connectedness within your team by allowing team members to connect in a different setting. By helping your team to create genuine bonds and enjoy each other’s company, you can help to enrich their communication skills and collaboration capabilities. Use our set of suggested team bonding exercises and add your own to keep things interesting. Download the PDF of team bonding exercises, cut them up and place them in a fishbowl so that you can have instant access to some great ideas when it comes to planning your next team outing.',
 	category: 3,

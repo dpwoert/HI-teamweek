@@ -87,7 +87,7 @@ export default class ToolDetail extends Component {
 							<div className="small-12 columns">
 								<div className="media-object">
 										<div className="thumbnail">
-											<img src= "images/stinkyfish.png" />
+											<img src={data.icon} className="tool-icon" />
 										</div>
 										<div className="media-object-section">
 											<h3>{data.name}</h3>

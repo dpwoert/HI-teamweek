@@ -1,6 +1,7 @@
 export default {
 	name: 'Snapback',
 	slug: 'snapback',
+	icon: 'images/07.svg',
 	byline: 'Use Snapchat to give and receive feedback in a quick, fun and easy way.',
 	description: 'The snapback tool is designed to help teams work more effectively by sharing regular feedback. Team members use Snapchat to give and receive specific feedback from one another. The Snapchat medium mitigates the anxiety some team members may feel when asked to give feedback.',
 	category: 1,

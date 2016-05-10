@@ -1,9 +1,16 @@
 export default {
 	name: 'Skype-oke',
 	slug: 'skype-oke',
+<<<<<<< HEAD
 	byline: 'A fun team activity to take a break, get silly and build team morale. This is done by singing karaoke over Skype or Google Hangout.',
 	description: 'Skype-oke is a group exercise to collaborate with your teammates in a fun way. It can be done at any time during group work e.g. at the start of a team meeting. The team sings one song karaoke style. Each team member sings one line after the next (if team members are uncomfortable with singing they can mime the line instead). This is all done over Google Hangout or Skype! This task is aimed at remote workers, however it can also be adapted for the physical workplace.',
 	category: 3,
+=======
+	icon: 'images/06.svg',
+	byline: 'A team activity to focus and synchronise the team. This is done by singing Karaoke over Skype or google hangout.',
+	description: 'Teams often lose focus during projects, this is a group exercise to regain focus, encourage active listening, and collaborate with your teammates in a fun way. The group sings one song karoake style, each team member singing one line after the next, this is all done over google hangout or Skype! This task is aimed at remote workers, however it can also be adapted for the physical workplace.',
+	category: 2,
+>>>>>>> origin/master
 
 	//from - to
 	time: [10,10],

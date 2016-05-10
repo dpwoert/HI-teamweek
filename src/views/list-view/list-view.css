@@ -1,5 +1,6 @@
 .list-view{
 	background: #fe3f00;
+	overflow: hidden;
 
 	&__block{
 		position: relative;
@@ -21,6 +22,15 @@
 			width: 100%;
 			text-align: center;
 			transform: translateY(-50%);
+		}
+
+		.icon{
+			height: 40px;
+			width: 40px;
+			background-size: contain;
+			left: 50%;
+			margin-left: -20px;
+			margin-top: -40px;
 		}
 
 		&:hover{

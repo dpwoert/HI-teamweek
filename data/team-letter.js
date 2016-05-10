@@ -1,6 +1,7 @@
 export default {
 	name: 'Team Letter',
 	slug: 'team-letter',
+	icon: 'images/09.svg',
 	byline: 'An activity to help you open up to your team and encourage you to share.',
 	description: 'AA culture building activity designed to help you form quick but lasting bonds by sharing information about yourself and your experiences. In this exercise you will spend 20 minutes writing a letter to your team. There are suggested questions to help you get started if you need inspiration. The goal of the exercise is to help your team understand who you are, your background and what motivates you. There are three letter templates for different stages of your project. Dear New Team for the project kickoff, Dear Team for mid-project check-ins and Dear Future Team to end the project and look forward to your next team.',
 	category: 2,
