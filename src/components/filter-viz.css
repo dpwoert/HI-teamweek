@@ -7,6 +7,10 @@
 		height: 100%;
 		top: 0;
 		background: #fe3f00;
+
+		@media screen and (max-width: 800px) {
+			display: none
+		}
 	}
 
 	&__canvas{

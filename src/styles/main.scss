@@ -21,9 +21,16 @@ html, body{
 	height: 100%;
 	overflow: scroll;
 	padding: 1em;
+
+	@media screen and (max-width: 800px) {
+		position: relative;
+		left: 0;
+		width: 100%;
+	}
 }
 
 /*set media query for mobile at 100%*/
+
 
 @import "../components/filter-viz.css";
 
