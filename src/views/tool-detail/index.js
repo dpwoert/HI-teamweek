@@ -77,6 +77,12 @@ export default class ToolDetail extends Component {
 								})}
 							</div>
 						</div>
+						<div className="row">
+							<div className="small-12 columns">
+								<h5>References</h5>
+								<p>{this.getLevel(data.hyperlinks)}</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

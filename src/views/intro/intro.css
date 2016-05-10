@@ -1,1 +1,6 @@
-.intro{}
+.intro{
+	text-align: center;
+}
+.intro h1{
+	font-family: "RomainHeadline-Black", 
+}
