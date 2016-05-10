@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { withRouter } from 'react-router'
 import ReactDOM from 'react-dom';
 import d3 from 'd3';
 import data from '../../data/data.js';
