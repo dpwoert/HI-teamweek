@@ -137,6 +137,9 @@ export default class FilterViz extends Component {
 			return row;
 		});
 
+		var extendDuration = d3.extent((d) => { return d.avgDuration; });
+		console.log(extendDuration)
+
 		this.circles
 			.transition()
 			.attr('r', (d,i) => {
