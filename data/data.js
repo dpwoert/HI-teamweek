@@ -1,4 +1,3 @@
-import stinkyFish from './stinky-fish.js';
 import handvas from './handvas.js';
 import pencilSpin from './pencil-spin.js';
 import photoTelling from './photo-telling.js';
@@ -7,10 +6,10 @@ import snapBack from './snapback.js';
 import energizers from './energizers.js';
 import teamBonding from './team-bonding.js';
 import remoteEnergizers from './remote-energizers.js';
-import teamLetter from './team-letter.js';
+import dearTeam from './team-letter.js';
+import thatsMe from './thats-me.js';
 
 export default [
-	// stinkyFish,
 	handvas,
 	pencilSpin,
 	photoTelling,
@@ -19,5 +18,6 @@ export default [
 	energizers,
 	teamBonding,
 	remoteEnergizers,
-	teamLetter
+	dearTeam,
+	thatsMe
 ];
