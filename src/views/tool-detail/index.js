@@ -48,7 +48,7 @@ export default class ToolDetail extends Component {
 								</div>
 								<div className="small-4 columns">
 									<h6>Group Size</h6>
-									<p>{data.group}</p>
+									<p>{data.group[0]}-{data.group[1]}</p>
 								</div>
 								<div className="small-4 columns">
 									<h6>Materials</h6>
