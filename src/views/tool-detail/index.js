@@ -4,6 +4,14 @@ import Step from './step.js';
 
 export default class ToolDetail extends Component {
 
+	getLevel(i){
+		switch(parseInt(i)){
+			case 1: return 'low';
+			case 2: return 'medium';
+			case 3: return 'high';
+		}
+	}
+
 	render() {
 
 		const tool = this.props.params.tool;
@@ -22,13 +30,13 @@ export default class ToolDetail extends Component {
 						<div className="row">
 							<div className="small-12 columns">
 								<div className="media-object">
-									    <div className="thumbnail">
-									      <img src= "images/stinkyfish.png" />
-									    </div>
+										<div className="thumbnail">
+											<img src= "images/stinkyfish.png" />
+										</div>
 										<div className="media-object-section">
-										    <h3>{data.name}</h3>
-										    <h5 className="subheader">{data.byline}</h5>
-										    <p>{data.description}</p>
+											<h3>{data.name}</h3>
+											<h5 className="subheader">{data.byline}</h5>
+											<p>{data.description}</p>
 										</div>
 								</div>
 								<hr />
@@ -37,7 +45,7 @@ export default class ToolDetail extends Component {
 							<div className="row meta">
 								<div className="small-4 columns">
 									<h6>Time</h6>
-									<p>{data.time}</p>
+									<p>{data.time[0]}-{data.time[1]}</p>
 								</div>
 								<div className="small-4 columns">
 									<h6>Group Size</h6>
@@ -45,17 +53,21 @@ export default class ToolDetail extends Component {
 								</div>
 								<div className="small-4 columns">
 									<h6>Materials</h6>
-									<p>{data.materials}</p>
+									<ul className="material-list">
+										{data.materials.map((material, i) => {
+											return <li key={i}>{material}</li>
+										})}
+									</ul>
 								</div>
 							</div>
 							<div className="row meta">
 								<div className="small-4 columns">
 									<h6>Experience Level</h6>
-									<p>{data.exp}</p>
+									<p>{this.getLevel(data.exp)}</p>
 								</div>
 								<div className="small-4 columns end">
 									<h6>Comfort Zone</h6>
-									<p>{data.comfortZone}</p>
+									<p>{this.getLevel(data.comfortZone)}</p>
 								</div>
 							</div>
 						<hr />
