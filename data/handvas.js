@@ -2,7 +2,7 @@ export default {
 	name: 'Handvas',
 	slug: 'handvas',
 	byline: 'The Handvas uses the recognizable symbol of a hand and fingers, enables the team to share personal needs and expectations, and then allows the team to summarize the culture in a quick and fun way.',
-	description: 'A quick tool for building team culture, focusing on each person’s strengths, goals, and things to avoid. Each member draws an outline of a hand and fills the fingers with words equivalent to the finger ‘s function (thumb for strengths, pinky for what makes you feel little etc.). The team shares their hands and discusses what was said, which is the core of the exercise. As a finisher the team comes up with a catchy “film” title that summarizes the culture.',
+	description: 'A quick tool for building team culture, focusing on each person’s strengths, goals, and things to avoid. Each member draws an outline of a hand and fills the fingers with words equivalent to the finger‘s function (thumb for strengths, pinky for what makes you feel little etc.). The team shares their hands and discusses what was said, which is the core of the exercise. As a finisher the team comes up with a catchy “film” title that summarizes the culture.',
 	category: 3,
 
 	//from - to
