@@ -24,14 +24,19 @@ export default {
 
 	steps: [
 		'Each member draws an outline of their hand.',
-		'Write one or a few words in each finger (~5 mins). 
-		* Thumb: strengths (e.g. critical thinker, good listener) Index finger – goals (e.g. thinking tools, portfolio pieces)
-		* Middle finger: what annoys you (e.g. lack of trust); Ring finger – what makes you loyal (e.g. commitment)
-		* Pinky finger: what makes you feel small (e.g. being condescended and shut down)
-		* Palm: something you want to open up about (e.g. feeling stressed about another deadline)',
+
+		[
+			'Write one or a few words in each finger (~5 mins). ',
+			'* Thumb: strengths (e.g. critical thinker, good listener) Index finger – goals (e.g. thinking tools, portfolio pieces)',
+			'* Middle finger: what annoys you (e.g. lack of trust); Ring finger – what makes you loyal (e.g. commitment)',
+			'* Pinky finger: what makes you feel small (e.g. being condescended and shut down)',
+			'* Palm: something you want to open up about (e.g. feeling stressed about another deadline)'
+		],
+
+
 		'Team members share their hands with the other team members (3 mins per hand)',
 		'The team discusses how to work together in order to enable as many strengths and avoid as many annoyances as possible during the upcoming project (15 mins).',
-		'To make the outcome memorable and to anchor the important things having been shared, the team comes up with a catchy “film” title that represents the team culture (3 mins).'
+		'To make the outcome memorable and to anchor the important things having been shared, the team comes up with a catchy “film” title that represents the team culture (3 mins).']
 
 
 	],
