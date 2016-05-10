@@ -11,11 +11,13 @@ export default class FilterViz extends Component {
 
 			var center = {x: window.innerWidth/4, y: window.innerHeight/2};
 			const columns = 2;
-			const rows = 3
+			const rows = 2;
 
 			if(this.mode === 'cat'){
 				center.x = (d.category % 2)/2 * window.innerWidth;
 				center.y = (d.category - (d.category % 2))/3 * (window.innerHeight - 120);
+
+				center.y += window.innerHeight * 0.2;
 			}
 
 			if(this.mode === 'time'){
@@ -147,6 +149,10 @@ export default class FilterViz extends Component {
 		this.force.alpha(alpha);
 
 		//legends
+		document.querySelector('.filter-viz__categories').style.opacity = 0;
+		if(this.mode === 'cat'){
+			document.querySelector('.filter-viz__categories').style.opacity = 1;
+		}
 		document.querySelector('.filter-viz__legend').style.opacity = 0;
 		if(this.mode === 'time'){
 			document.querySelector('.filter-viz__legend').style.opacity = 1;
@@ -260,6 +266,13 @@ export default class FilterViz extends Component {
 					<div className="filter-viz__comfort-zone--1">low</div>
 					<div className="filter-viz__comfort-zone--2">medium</div>
 					<div className="filter-viz__comfort-zone--3">high</div>
+				</div>
+
+				<div className="filter-viz__categories">
+					<div className="filter-viz__categories--1">ice breakers</div>
+					<div className="filter-viz__categories--2">feedback & reflection</div>
+					<div className="filter-viz__categories--3">culture development</div>
+					<div className="filter-viz__categories--4">breaks & bonding</div>
 				</div>
 
 				<svg className="filter-viz__canvas" />

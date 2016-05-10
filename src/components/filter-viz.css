@@ -148,7 +148,6 @@
 		transition: opacity 0.2s ease;
 		pointer-events: none;
 
-		z-index: 2;
 
 		div{
 			width: 200px;
@@ -157,6 +156,7 @@
 
 			font-weight: bold;
 			font-size: 10px;
+			z-index: 2;
 		}
 
 		&--1{
@@ -173,6 +173,46 @@
 			position: absolute;
 			bottom: 10%;
 			left: 75%;
+		}
+
+	}
+
+	&__categories{
+
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		pointer-events: none;
+
+
+		div{
+			width: 200px;
+			margin-left: -100px;
+			text-align: center;
+
+			font-weight: bold;
+			font-size: 10px;
+			z-index: 2;
+		}
+
+		&--1{
+			position: absolute;
+			top: 40%;
+			left: 20%;
+		}
+		&--2{
+			position: absolute;
+			top: 40%;
+			left: 80%;
+		}
+		&--3{
+			position: absolute;
+			bottom: 20%;
+			left: 20%;
+		}
+		&--4{
+			position: absolute;
+			bottom: 20%;
+			left: 80%;
 		}
 
 	}
