@@ -29,11 +29,9 @@ export default class ToolDetail extends Component {
 
 	getReferences(data){
 
-		if(!data.hyperlinks || data.hyperlinks == '' || data.hyperlinks.length === 0){
+		if(!data.hyperlinks || data.hyperlinks == '' || data.hyperlinks.length === 0 || !data instanceof Array){
 			return undefined;
 		}
-
-		console.log(data.hyperlinks)
 
 		return (
 			<div>
