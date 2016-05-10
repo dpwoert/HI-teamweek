@@ -139,6 +139,13 @@ export default class FilterViz extends Component {
 
 		this.force.alpha(alpha);
 
+		//legend?
+		document.querySelector('.filter-viz__legend').style.opacity = 0;
+		if(this.mode === 'time'){
+			document.querySelector('.filter-viz__legend').style.opacity = 1;
+		}
+
+
 	}
 
 	componentDidMount(){
@@ -220,10 +227,18 @@ export default class FilterViz extends Component {
 
 		return (
 			<div className="filter-viz__container">
+
 				<div className="filter-viz__button" onClick={this.toggle.bind(this, 'none')} />
 				<div className="filter-viz__button filter-viz__button--2" onClick={this.toggle.bind(this, 'cat')} />
 				<div className="filter-viz__button filter-viz__button--3" onClick={this.toggle.bind(this, 'time')} />
 				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'comfort')} />
+
+				<div className="filter-viz__legend">
+					<div className="filter-viz__legend__start">20min</div>
+					<div className="filter-viz__legend__end">120min</div>
+					<div className="filter-viz__legend__line"></div>
+				</div>
+
 				<svg className="filter-viz__canvas" />
 			</div>
 		);

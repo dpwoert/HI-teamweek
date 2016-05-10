@@ -36,7 +36,7 @@ const paths = {
 	entry: 'src/Index.js',
 	srcCss: 'src/**/*.{scss,css}',
 	srcImg: 'images/**',
-	srcFonts: 'src/fonts/**',
+	srcFonts: 'fonts/**',
 	srcLint: ['src/**/*.js', 'test/**/*.js'],
 	dist: 'dist',
 	distJs: 'dist/js',

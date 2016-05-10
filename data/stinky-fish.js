@@ -6,7 +6,7 @@ export default {
 	category: 0,
 
 	//from - to
-	time: [30,60],
+	time: [90,100],
 
 	//undefined for any amount of people, otherwise a number
 	group: undefined || [5,10],

@@ -70,5 +70,37 @@
 		}
 	}
 
+	&__legend{
+
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		pointer-events: none;
+
+		&__start, &__end, &__line{
+			position: absolute;
+			right: 12px;
+			font-weight: bold;
+			font-size: 10px;
+			top: 16px;
+			width: 28px;
+			text-align: center;
+			color: white;
+		}
+
+		&__end{
+			top: auto;
+			bottom: 16px;
+		}
+
+		&__line{
+			width: 1px;
+			top: 32px;
+			bottom: 32px;
+			background: rgba(255,255,255,0.5);
+			right: 25px;
+		}
+
+	}
+
 
 }
