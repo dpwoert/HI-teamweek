@@ -7,6 +7,7 @@ import snapBack from './snapback.js';
 import energizers from './energizers.js';
 import teamBonding from './team-bonding.js';
 import remoteEnergizers from './remote-energizers.js';
+import teamLetter from './team-letter.js';
 
 export default [
 	stinkyFish,
@@ -17,5 +18,6 @@ export default [
 	skypeOke,
 	energizers,
 	teamBonding,
-	remoteEnergizers
+	remoteEnergizers,
+	teamLetter
 ];
