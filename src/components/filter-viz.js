@@ -1,19 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import d3 from 'd3';
-
-let dummyData = [
-	{ slug:'stinky-fish', name: 'Stinky Fish', duration: 30, radius: 6, group: 0, persons: 5 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 1', duration: 30, radius: 6, group: 1, persons: 10 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 2', duration: 30, radius: 6, group: 0, persons: 5 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 3', duration: 60, radius: 6, group: 3, persons: 15 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 4', duration: 30, radius: 6, group: 2, persons: 5 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 5', duration: 10, radius: 6, group: 4, persons: 5 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 6', duration: 30, radius: 6, group: 4, persons: 5 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 7', duration: 90, radius: 6, group: 5, persons: 10 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 8', duration: 30, radius: 6, group: 2, persons: 5 },
-	{ slug:'stinky-fish', name: 'Stinky Fish 9', duration: 10, radius: 6, group: 0, persons: 15 }
-];
+import data from '../../data/data.js';
 
 export default class FilterViz extends Component {
 
@@ -25,16 +13,39 @@ export default class FilterViz extends Component {
 			const rows = 3
 
 			if(this.mode === 'cat'){
-				center.x = (d.group % 2)/2 * window.innerWidth;
-				center.y = (d.group - (d.group % 2))/3 * (window.innerHeight - 120);
+				center.x = (d.category % 2)/2 * window.innerWidth;
+				center.y = (d.category - (d.category % 2))/3 * (window.innerHeight - 120);
 			}
 
 			if(this.mode === 'time'){
-				center.y = this.timeScale(d.duration);
+				center.y = this.timeScale(d.avgDuration);
 			}
 
 			if(this.mode === 'persons'){
 				center.y = this.personScale(d.persons);
+			}
+
+			if(this.mode === 'comfort'){
+
+				var p1 = {
+					x: window.innerWidth/4,
+					y: window.innerHeight/4
+				};
+				var p2 = {
+					x: (window.innerWidth/2) * 0.33,
+					y: window.innerHeight*0.75
+				};
+				var p3 = {
+					x: (window.innerWidth/2) * 0.66,
+					y: window.innerHeight*0.75
+				};
+
+				switch(this.comfortZone){
+					case 1: center = p1; break;
+					case 2: center = p2; break;
+					case 3: center = p3; break;
+				}
+
 			}
 
 			//generate y
@@ -101,7 +112,7 @@ export default class FilterViz extends Component {
 		let scaling = 1;
 		let alpha = 0.1;
 
-		if(this.mode === 'cat' || this.mode === 'time' || this.mode === 'persons'){
+		if(this.mode === 'cat' || this.mode === 'time' || this.mode === 'persons' || this.mode === 'comfort'){
 			scaling = 0.5;
 		}
 
@@ -110,7 +121,8 @@ export default class FilterViz extends Component {
 		}
 
 		this.nodes = this.data.map((row) => {
-			row.radius = this.radius(row.duration) * scaling;
+
+			row.radius = this.radius(row.avgDuration) * scaling;
 
 			if(this.mode === 'persons'){
 				row.radius = this.radius2(row.persons);
@@ -144,8 +156,9 @@ export default class FilterViz extends Component {
 		this.mode = 'none';
 
 		//prepare data
-		this.nodes = dummyData.map((row) => {
-			row.radius = this.radius(row.duration);
+		this.nodes = data.map((row) => {
+			row.avgDuration = row.time[0]/2 + row.time[1]/2;
+			row.radius = this.radius(row.avgDuration);
 			row.x = 0;
 			row.y = 0;
 			return row;
@@ -206,7 +219,7 @@ export default class FilterViz extends Component {
 				<div className="filter-viz__button" onClick={this.toggle.bind(this, 'none')} />
 				<div className="filter-viz__button filter-viz__button--2" onClick={this.toggle.bind(this, 'cat')} />
 				<div className="filter-viz__button filter-viz__button--3" onClick={this.toggle.bind(this, 'time')} />
-				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'persons')} />
+				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'comfort')} />
 				<svg className="filter-viz__canvas" />
 			</div>
 		);
