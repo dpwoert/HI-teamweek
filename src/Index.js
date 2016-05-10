@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, hashHistory, IndexRoute } from 'react-router';
 
 import App from './components/App';
 import Home from './views/home/';
@@ -10,9 +10,11 @@ import About from './views/about/';
 
 window.React = React;
 
+const history = hashHistory;
+
 render(
 	(
-		<Router history={browserHistory}>
+		<Router history={history}>
 			<Route path="/" component={Home}>
 				<IndexRoute component={Intro}/>
 				<Route path="/:tool" component={ToolDetail} />
