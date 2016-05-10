@@ -2,7 +2,7 @@ export default {
 	name: 'Snapback',
 	slug: 'snapback',
 	byline: 'Use Snapchat to give and receive feedback in a quick, fun and easy way.',
-	description: 'The snapback tool is designed to help teams work more effectively by sharing regular feedback. Team members use Snapchat to give and receive specific feedback from one another. The Snapchat medium mitigates the anxiety some team members may feel when asked to give feedback. It allows team members to give and receive feedback on their own terms and in a direct but ...way.',
+	description: 'The snapback tool is designed to help teams work more effectively by sharing regular feedback. Team members use Snapchat to give and receive specific feedback from one another. The Snapchat medium mitigates the anxiety some team members may feel when asked to give feedback.',
 	category: 1,
 
 	//from - to
@@ -41,9 +41,10 @@ export default {
 
 	hyperlinks: [
 		{label: "Principles of Effective Feedback", url: 'http://toolbox.hyperisland.com/principles-of-effective-feedback'},
-		{label: "Marshall Rosenberg’s four-part feedback process ", url: 'ttp://www.nonviolentcommunication.com/aboutnvc/4partprocess.htm'}
+		{label: "Marshall Rosenberg’s four-part feedback process ", url: 'http://www.nonviolentcommunication.com/aboutnvc/4partprocess.htm'},
+		{label: "Icon by Till Teenck", url: 'https://thenounproject.com/tillt/'}
 	],
 
-	attachment: 'url.jpg'
+	attachment: undefined
 
 };

@@ -1,39 +1,43 @@
 export default {
 	name: 'Skype-oke',
 	slug: 'skype-oke',
-	byline: 'A team activity to focus and synchronise the team. This is done by singing Karaoke over Skype or google hangout.',
-	description: 'Teams often lose focus during projects, this is a group exercise to regain focus, encourage active listening, and collaborate with your teammates in a fun way. The group sings one song karoake style, each team member singing one line after the next, this is all done over google hangout or Skype! This task is aimed at remote workers, however it can also be adapted for the physical workplace.',
-	category: 2,
+	byline: 'A fun team activity to take a break, get silly and build team morale. This is done by singing karaoke over Skype or Google Hangout.',
+	description: 'Skype-oke is a group exercise to collaborate with your teammates in a fun way. It can be done at any time during group work e.g. at the start of a team meeting. The team sings one song karaoke style. Each team member sings one line after the next (if team members are uncomfortable with singing they can mime the line instead). This is all done over Google Hangout or Skype! This task is aimed at remote workers, however it can also be adapted for the physical workplace.',
+	category: 3,
 
 	//from - to
-	time: [10,20],
+	time: [10,10],
 
 	//undefined for any amount of people, otherwise a number
 	group: undefined || [3,10],
 
 	//1: low, 2: mid, 3: high
-	exp: [1,3],
+	exp: [1],
 
 	materials: [
 		'Laptop or tablet',
-		'Skype or Google Hangout'
+		'Skype or Google Hangout',
+		'Headphones'
 	],
 
 	//1: low, 2: mid, 3: high
-	comfortZone: 2,
+	comfortZone: 3,
 
 	steps: [
-		'Invite co­workers to google hangout and start video chat',
-		'Go to www.hyperisland.com and select a song as a group',
-		'Follow the link to the youtube video and re­arrange your screen to fit in google hangout and youtube video.',
-		'Decide on order of singers. Each singer has to sing one line of the song then it passes to the next singer.',
-		'Countdown. Then all the team must press play in time.',
+		'Choose a facilitator. The facilitator invites the team to Google Hangout or Skype and starts a video chat.',
+		'The facilitator picks a karaoke song from Youtube',
+		'Find the desired song on Youtube (make sure to find a video with lyrics!) and share the video URL in the Google Hangout or Skype chat. Each team member should make sure to rearrange their screen to fit both the Google Hangout screen and the Youtube video.',
+		['Decide on the order of singers and then give team members the following instructions:',
+		'* Each team member has to sing one line of the song.',
+		'* Then, the ‘microphone’ passes to the next member of the team to sing the next line.'
+		],
+		'The facilitator begins a verbal countdown. Then, everyone must press play on the Youtube video at the same time.',
 		'SING!'
 
 	],
 
 	hyperlinks: [
-		{label: "hyper island", url: 'http://www.hyperisland.com'}
+		{label: "Icon by Mateo Zlatar", url: 'https://thenounproject.com/mateozlatar/'}
 	],
 
 	attachment: undefined

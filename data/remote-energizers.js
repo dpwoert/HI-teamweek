@@ -30,8 +30,9 @@ export default {
 	],
 
 	hyperlinks: [
-		{label: "Energizer SlackBot", url: 'https://slack.com/oauth/authorize?scope=bot%2Cteam%3Aread&redirect_uri=https%3A%2F%2Fmeya.ai%2Fbreakbot%2Foauth&client_id=41299434624.41573475956'}
+		{label: "Energizer SlackBot", url: 'https://slack.com/oauth/authorize?scope=bot%2Cteam%3Aread&redirect_uri=https%3A%2F%2Fmeya.ai%2Fbreakbot%2Foauth&client_id=41299434624.41573475956'},
+		{label: "Icon by Yorlmar Campos", url: 'https://thenounproject.com/Yorlmar%20Campos/'}
 	],
 
-	attachment: undefined
+	attachment: 'attachments/03_Remote_Energizers.pdf'
 };
