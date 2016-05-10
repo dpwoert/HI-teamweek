@@ -15,7 +15,6 @@ export default class ToolDetail extends Component {
 	render() {
 
 		const tool = this.props.params.tool;
-		console.log(tool);
 
 		let data = tools.filter((row) => {
 			return row.slug === tool;

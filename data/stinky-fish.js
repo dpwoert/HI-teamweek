@@ -9,7 +9,7 @@ export default {
 	time: [30,60],
 
 	//undefined for any amount of people, otherwise a number
-	group: undefined || 10,
+	group: undefined || [5,10],
 
 	//1: low, 2: mid, 3: high
 	exp: 3,
