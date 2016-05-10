@@ -1,8 +1,8 @@
 export default {
 	name: 'Energizers',
 	slug: 'energizers',
-	byline: 'nfnbkgjbngbkjnkjn',
-	description: 'kjndfkvjnfkjn',
+	byline: 'Energizers are fun exercises to get your team going when energy levels are waning.',
+	description: 'Energizers are great when your team needs a boost. They are suitable to use at any point throughout the day, or at the beginning of a meeting. Energizers promote positive interaction between team members, help them to bond and effectively boost enthusiasm and morale. Download our deck of energizers, cut them up and place them in a fishbowl so that you can quickly grab one when you need help getting your team moving.',
 	category: 0,
 
 	//from - to
