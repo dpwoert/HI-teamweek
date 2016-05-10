@@ -1,6 +1,57 @@
 *, h1, h2, h3, h4, h5, h6{
-  font-family: "Roboto", Helvetica Neue,Helvetica, Arial,sans-serif
+  font-family: 'Helvetica Neue', Helvetica, Arial,sans-serif
 }
+
+.link-home{
+	position: absolute;
+	left: 10px;
+	top: 16px;
+	height: 20px;
+	width: 20px;
+	background: url('../images/home.svg');
+	background-size: contain;
+	text-decoration: none;
+	display: block;
+}
+
+.tool-detail{
+	padding-left: 80px;
+	padding-right: 80px;
+	background: none;
+
+	.first-row{
+		margin-top: 35px;
+
+	}
+
+	h3,h4{
+		color: black;
+		font-size: 30px;
+	}
+
+	h5, .step-content{
+		color: #7f7f7f;
+		font-size: 16px;
+		margin-top: 30px;
+	}
+
+	.description{
+		margin-top: 30px;
+	}
+
+	.meta p, li{
+		color: #7f7f7f;
+	}
+
+	h4, .step-content{
+		margin-top: 15px;
+	}
+}
+
+.thumbnail:hover{
+	box-shadow: none;
+}
+
 .thumbnail {
     box-shadow: none;
     transition: none;

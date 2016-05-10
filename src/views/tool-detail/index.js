@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import tools from '../../../data/data.js';
 import Step from './step.js';
+import {Link} from 'react-router';
 
 export default class ToolDetail extends Component {
 
@@ -24,9 +25,15 @@ export default class ToolDetail extends Component {
 
 		return (
 			<div className="tool-detail right-pane">
+
+				<div className="pattern-1" />
+				<div className="pattern-2" />
+
+				<Link to="/" className="link-home" />
+
 				<div className="row">
 					<div className="small-12 columns">
-						<div className="row">
+						<div className="row first-row">
 							<div className="small-12 columns">
 								<div className="media-object">
 										<div className="thumbnail">
@@ -35,7 +42,7 @@ export default class ToolDetail extends Component {
 										<div className="media-object-section">
 											<h3>{data.name}</h3>
 											<h5 className="subheader">{data.byline}</h5>
-											<p>{data.description}</p>
+											<p className="description">{data.description}</p>
 										</div>
 								</div>
 								<hr />

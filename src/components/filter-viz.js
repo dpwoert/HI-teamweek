@@ -99,11 +99,17 @@ export default class FilterViz extends Component {
 				return d.radius;
 			})
 			.attr('cx', function(d,i) { return d.x; })
-			.attr('cy', function(d,i) { return d.y; });
+			.attr('cy', function(d,i) { return d.y; })
+			.style('fill', (d) => {
+				return this.props.params.tool === d.slug ? '#FFFFFF' : '#FE9F80';
+			});
 
 		this.texts
 			.attr('x', function(d,i) { return d.x; })
-			.attr('y', function(d,i) { return d.y; });
+			.attr('y', function(d,i) { return d.y; })
+			.style('fill', (d) => {
+				return this.props.params.tool === d.slug ? '#000' : '#FFF';
+			});
 
 	}
 
