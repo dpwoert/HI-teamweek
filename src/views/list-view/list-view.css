@@ -8,6 +8,8 @@
 		float: left;
 		color: white;
 
+		transition: color 0.2s ease;
+
 		&:nth-of-type(even){
 			/*background: rgba(254, 63, 0, 0.83);*/
 		}
@@ -19,6 +21,10 @@
 			width: 100%;
 			text-align: center;
 			transform: translateY(-50%);
+		}
+
+		&:hover{
+			color: black;
 		}
 
 		@media screen and (max-width: 400px) {
