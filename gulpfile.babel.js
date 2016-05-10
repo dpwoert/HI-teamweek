@@ -61,6 +61,7 @@ gulp.task('clean', cb => {
 
 gulp.task('browserSync', () => {
 	browserSync({
+		ghostMode: false,
 		server: {
 			baseDir: './',
 			routes: {
