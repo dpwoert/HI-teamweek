@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import ReactMarkdown from 'react-markdown';
 
 export default class Step extends Component {
 
@@ -12,7 +13,7 @@ export default class Step extends Component {
 				<div className="row">
 					<div className="small-12 columns">
 						<h4>Step {number}</h4>
-						<p>{data}</p>
+						<p><ReactMarkdown source={data} /></p>
 					</div>
 				</div>
 			</div>
