@@ -144,7 +144,7 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('lib', () => {
-	return gulp.src(['lib/**/*', 'bower_components/**/*', 'attachments/*.{pdf,jpg,png,zip}'], {
+	return gulp.src(['lib/**/*', 'node_modules/**/*.css', 'bower_components/**/*', 'attachments/*.{pdf,jpg,png,zip}'], {
 		base: '.'
 	}).pipe(gulp.dest('dist'));
 });
@@ -155,8 +155,9 @@ gulp.task('watchTask', () => {
 });
 
 gulp.task('deploy', () => {
-	gulp.src(paths.distDeploy)
-		// .pipe(ghPages());
+	return gulp
+		.src('./dist/**/*')
+		.pipe(ghPages());
 });
 
 gulp.task('watch', cb => {
