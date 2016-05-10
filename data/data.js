@@ -9,7 +9,7 @@ import teamBonding from './team-bonding.js';
 import remoteEnergizers from './remote-energizers.js';
 
 export default [
-	stinkyFish,
+	// stinkyFish,
 	handvas,
 	pencilSpin,
 	photoTelling,
