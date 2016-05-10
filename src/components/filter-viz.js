@@ -99,16 +99,21 @@ export default class FilterViz extends Component {
 	toggle(mode){
 		this.mode = mode;
 		let scaling = 1;
+		let alpha = 0.1;
 
 		if(this.mode === 'cat' || this.mode === 'time' || this.mode === 'persons'){
 			scaling = 0.5;
+		}
+
+		if(this.mode === 'persons'){
+			alpha = 0.2;
 		}
 
 		this.nodes = this.data.map((row) => {
 			row.radius = this.radius(row.duration) * scaling;
 
 			if(this.mode === 'persons'){
-				radius = this.radius2(row.persons);
+				row.radius = this.radius2(row.persons);
 			}
 
 			return row;
@@ -120,7 +125,7 @@ export default class FilterViz extends Component {
 				return d.radius;
 			});
 
-		this.force.alpha(0.1);
+		this.force.alpha(alpha);
 
 	}
 
@@ -133,9 +138,9 @@ export default class FilterViz extends Component {
 		const height = window.innerHeight;
 
 		this.radius = d3.scale.sqrt().domain([0,90]).range([40, 100]);
-		this.radius2 = d3.scale.sqrt().domain([0,15]).range([40, 100]);
-		this.timeScale = d3.scale.linear().domain([0,90]).range([0, window.innerHeight])
-		this.personScale = d3.scale.linear().domain([0,15]).range([0, window.innerHeight])
+		this.radius2 = d3.scale.sqrt().domain([5,15]).range([40, 80]);
+		this.timeScale = d3.scale.linear().domain([10,90]).range([0, window.innerHeight])
+		this.personScale = d3.scale.linear().domain([5,15]).range([50, window.innerHeight])
 		this.mode = 'none';
 
 		//prepare data
