@@ -7,9 +7,9 @@ export default class ToolDetail extends Component {
 
 	getLevel(i){
 		switch(parseInt(i)){
-			case 1: return 'low';
-			case 2: return 'medium';
-			case 3: return 'high';
+			case 1: return 'Low';
+			case 2: return 'Medium';
+			case 3: return 'High';
 		}
 	}
 
@@ -86,8 +86,11 @@ export default class ToolDetail extends Component {
 						</div>
 						<div className="row">
 							<div className="small-12 columns">
-								<h5>References</h5>
-								<p>{this.getLevel(data.hyperlinks)}</p>
+								<h6>Attachments</h6>
+								<img src= "images/stinkyfish.png" />
+								<h6>References</h6>
+								<p><a>Hyper Island Toolbox</a></p>
+								
 							</div>
 						</div>
 					</div>
