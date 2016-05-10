@@ -29,7 +29,7 @@ export default class FilterViz extends Component {
 
 				var p1 = {
 					x: window.innerWidth/4,
-					y: window.innerHeight*0.25
+					y: window.innerHeight*0.15
 				};
 				var p2 = {
 					x: (window.innerWidth/2) * 0.1,
