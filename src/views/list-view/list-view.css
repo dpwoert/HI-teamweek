@@ -22,6 +22,7 @@
 			width: 100%;
 			text-align: center;
 			transform: translateY(-50%);
+			margin-top: 20px;
 		}
 
 		.icon{
@@ -30,7 +31,7 @@
 			background-size: contain;
 			left: 50%;
 			margin-left: -20px;
-			margin-top: -40px;
+			margin-top: -20px;
 		}
 
 		&:hover{
