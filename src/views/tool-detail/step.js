@@ -5,11 +5,11 @@ export default class Step extends Component {
 
 	render() {
 
-		const data = this.props.data;
+		let data = this.props.data;
 		const number = this.props.number;
 
 		if(data instanceof Array){
-			data.join('\n');
+			data = data.join('\n');
 		}
 
 		return (
