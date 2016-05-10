@@ -1,6 +1,48 @@
 .intro{
-	text-align: center;
-}
-.intro h1{
-	font-family: "RomainHeadline-Black", 
+
+	.logos{
+		margin-top: 35px;
+		text-align: center;
+
+		span{
+			color: #7f7f7f;
+			font-size: 16px;
+		}
+
+		div{
+			margin-top: 15px;
+		}
+
+		img{
+			margin-right: 35px;
+
+			&:last-of-type{
+				margin: 0;
+			}
+		}
+	}
+
+	h1{
+		color: black;
+		font-size: 30px;
+	}
+
+	.verticle-center{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		text-align: center;
+
+		padding-left: 80px;
+		padding-right: 80px;
+
+
+		transform: translateY(-50%);
+
+		p{
+			color: #7f7f7f;
+			font-size: 16px;
+		}
+	}
+
 }

@@ -36,7 +36,7 @@ const paths = {
 	entry: 'src/Index.js',
 	srcCss: 'src/**/*.{scss,css}',
 	srcImg: 'images/**',
-	srcFonts: 'src/fonts/**',
+	srcFonts: 'fonts/**',
 	srcLint: ['src/**/*.js', 'test/**/*.js'],
 	dist: 'dist',
 	distJs: 'dist/js',
@@ -143,7 +143,7 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('lib', () => {
-	return gulp.src(['lib/**/*', 'bower_components/**/*'], {
+	return gulp.src(['lib/**/*', 'bower_components/**/*', 'attachments/*.{pdf,jpg,png,zip}'], {
 		base: '.'
 	}).pipe(gulp.dest('dist'));
 });

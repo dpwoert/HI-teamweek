@@ -13,6 +13,18 @@ html, body{
 
 }
 
+.left-pane{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+
+	display: none;
+
+	@media screen and (max-width: 800px) {
+		display: block;
+	}
+}
+
 .right-pane{
 	position: absolute;
 	left: 50%;
@@ -22,6 +34,11 @@ html, body{
 	overflow: scroll;
 	padding: 1em;
 
+	background: url('../images/pattern3.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: 550px auto;
+
 	@media screen and (max-width: 800px) {
 		position: relative;
 		left: 0;
@@ -29,7 +46,30 @@ html, body{
 	}
 }
 
-/*set media query for mobile at 100%*/
+.pattern-1{
+	position: absolute;
+	background: url('../images/pattern1.png');
+	background-size: cover;
+
+	width: 40px;
+	height: 180px;
+
+	top: 60px;
+	left: 0;
+}
+
+.pattern-2{
+	position: absolute;
+	background: url('../images/pattern2.png');
+	background-size: cover;
+
+	width: 70px;
+	height: 70px;
+
+	top: 0;
+	right: 0;
+}
+
 
 
 @import "../components/filter-viz.css";
@@ -37,3 +77,5 @@ html, body{
 @import "../views/home/home.css";
 @import "../views/about/about.css";
 @import "../views/tool-detail/tool-detail.css";
+@import "../views/list-view/list-view.css";
+@import "../views/intro/intro.css";

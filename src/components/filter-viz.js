@@ -32,7 +32,7 @@ export default class FilterViz extends Component {
 					y: window.innerHeight*0.25
 				};
 				var p2 = {
-					x: (window.innerWidth/2) * 0.2,
+					x: (window.innerWidth/2) * 0.1,
 					y: window.innerHeight*0.8
 				};
 				var p3 = {
@@ -99,11 +99,17 @@ export default class FilterViz extends Component {
 				return d.radius;
 			})
 			.attr('cx', function(d,i) { return d.x; })
-			.attr('cy', function(d,i) { return d.y; });
+			.attr('cy', function(d,i) { return d.y; })
+			.style('fill', (d) => {
+				return this.props.params.tool === d.slug ? '#FFFFFF' : '#FE9F80';
+			});
 
 		this.texts
 			.attr('x', function(d,i) { return d.x; })
-			.attr('y', function(d,i) { return d.y; });
+			.attr('y', function(d,i) { return d.y; })
+			.style('fill', (d) => {
+				return this.props.params.tool === d.slug ? '#000' : '#FFF';
+			});
 
 	}
 
@@ -138,6 +144,13 @@ export default class FilterViz extends Component {
 			});
 
 		this.force.alpha(alpha);
+
+		//legend?
+		document.querySelector('.filter-viz__legend').style.opacity = 0;
+		if(this.mode === 'time'){
+			document.querySelector('.filter-viz__legend').style.opacity = 1;
+		}
+
 
 	}
 
@@ -206,6 +219,10 @@ export default class FilterViz extends Component {
 			// this.force.alpha(0.1);
 		});
 
+		window.addEventListener('resize', (evt) => {
+			this.force.size([window.innerWidth/2, window.innerHeight]).resume();
+		});
+
 	}
 
 	componentWillUnmount(){
@@ -216,10 +233,18 @@ export default class FilterViz extends Component {
 
 		return (
 			<div className="filter-viz__container">
+
 				<div className="filter-viz__button" onClick={this.toggle.bind(this, 'none')} />
 				<div className="filter-viz__button filter-viz__button--2" onClick={this.toggle.bind(this, 'cat')} />
 				<div className="filter-viz__button filter-viz__button--3" onClick={this.toggle.bind(this, 'time')} />
 				<div className="filter-viz__button filter-viz__button--4" onClick={this.toggle.bind(this, 'comfort')} />
+
+				<div className="filter-viz__legend">
+					<div className="filter-viz__legend__start">20min</div>
+					<div className="filter-viz__legend__end">120min</div>
+					<div className="filter-viz__legend__line"></div>
+				</div>
+
 				<svg className="filter-viz__canvas" />
 			</div>
 		);

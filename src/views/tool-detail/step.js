@@ -17,7 +17,7 @@ export default class Step extends Component {
 				<div className="row">
 					<div className="small-12 columns">
 						<h4>Step {number}</h4>
-						<ReactMarkdown source={data} />
+						<ReactMarkdown source={data} className="step-content" />
 					</div>
 				</div>
 			</div>
