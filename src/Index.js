@@ -10,7 +10,7 @@ import About from './views/about/';
 
 window.React = React;
 
-const history = hashHistory;
+const history = browserHistory;
 
 render(
 	(
