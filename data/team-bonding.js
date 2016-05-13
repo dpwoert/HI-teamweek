@@ -34,9 +34,9 @@ export default {
 
 	hyperlinks: [
 		{label: "hyper island", url: 'http://www.hyperisland.com'},
-		{label: "team week", url: 'http://www.teamweek.com'}
+		{label: "teamweek", url: 'http://www.teamweek.com'}
 	],
 
-	attachment: 'teambonding.pdf'
+	attachment: 'attachments/10_Spin_the_Pencil.pdf'
 
 };

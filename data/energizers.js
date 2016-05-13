@@ -33,7 +33,7 @@ export default {
 	],
 
 	hyperlinks: [
-		{label: "hyper island toolbox", url: 'http://toolbox.hyperisland.com/'}
+		{label: "Hyper Island toolbox", url: 'http://toolbox.hyperisland.com/'}
 	],
 
 	attachment: 'attachments/02_Energizers.pdf'

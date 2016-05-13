@@ -42,6 +42,6 @@ export default {
 
 	hyperlinks: [ ],
 
-	attachment: 'attachments/Team_letters.pdf'
+	attachment: 'attachments/team_letters.pdf'
 
 };
