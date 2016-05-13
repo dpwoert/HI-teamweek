@@ -72,6 +72,16 @@ html, body{
 	right: 0;
 }
 
+@media screen and (max-width: 800px) {
+	.pattern-1, .pattern-2{
+		display: none;
+	}
+
+	.right-pane{
+		background-image: none;
+	}
+}
+
 
 
 @import "../components/filter-viz.css";

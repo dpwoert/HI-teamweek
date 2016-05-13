@@ -22,7 +22,7 @@ export default class ToolDetail extends Component {
 		return (
 			<div>
 				<h4>Attachments</h4>
-				<p><a href={data.attachment}>download attachment</a></p>
+				<p><a href={data.attachment} target="_blank">download attachment</a></p>
 			</div>
 		);
 	}
