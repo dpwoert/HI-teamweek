@@ -40,7 +40,12 @@ export default {
 
 	attachment: undefined,
 
-	teamName: '',
-	teamMembers: []
+	teamName: 'Ice Ice Baby',
+	teamMembers: [
+		'@dominic',
+		'@mario',
+		'@mustafa',
+		'@yann'
+	]
 
 };
