@@ -44,6 +44,12 @@ export default {
 		{label: "Handcanvas", url: 'http://www.hyperisland.com'}
 	],
 
-	attachment: undefined
+	attachment: undefined,
+
+	teamName: '',
+	teamMembers: [
+		'@_stefanjost',
+		'@janovem'
+	]
 
 };

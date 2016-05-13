@@ -38,6 +38,9 @@ export default {
 		{label: "Icon by Austin Condiff", url: 'https://thenounproject.com/acondiff/'}
 	],
 
-	attachment: undefined
+	attachment: undefined,
+
+	teamName: '',
+	teamMembers: []
 
 };

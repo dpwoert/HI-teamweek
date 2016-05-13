@@ -32,6 +32,9 @@ export default {
 		{label: "teamweek", url: 'http://www.teamweek.com'}
 	],
 
-	attachment: 'url.jpg'
+	attachment: 'url.jpg',
+
+	teamName: '',
+	teamMembers: []
 
 };

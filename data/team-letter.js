@@ -42,6 +42,12 @@ export default {
 
 	hyperlinks: [ ],
 
-	attachment: 'attachments/team_letters.pdf'
+	attachment: 'attachments/team_letters.pdf',
+
+	teamName: '',
+	teamMembers: [
+		'@lisasibbing',
+		'@nadinekriegelstein'
+	]
 
 };

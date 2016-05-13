@@ -35,5 +35,14 @@ export default {
 		{label: "Icon by Yorlmar Campos", url: 'https://thenounproject.com/Yorlmar%20Campos/'}
 	],
 
-	attachment: 'attachments/03_Remote_Energizers.pdf'
+	attachment: 'attachments/03_Remote_Energizers.pdf',
+
+	teamName: 'Victorious Secret',
+	teamMembers: [
+		'@morley_laura',
+		'@Jvb_nl',
+		'@NatashMcNamara',
+		'@TweetToRoni'
+	]
+
 };

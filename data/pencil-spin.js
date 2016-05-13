@@ -36,6 +36,9 @@ export default {
 
 	hyperlinks: [],
 
-	attachment: 'attachments/10_Spin_the_Pencil.pdf'
+	attachment: 'attachments/10_Spin_the_Pencil.pdf',
+
+	teamName: '',
+	teamMembers: []
 
 };

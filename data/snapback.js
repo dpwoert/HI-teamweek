@@ -46,6 +46,15 @@ export default {
 		{label: "Icon by Till Teenck", url: 'https://thenounproject.com/tillt/'}
 	],
 
-	attachment: undefined
+	attachment: undefined,
+
+	teamName: '',
+	teamMembers: [
+		'@clara',
+		'@mayra',
+		'@susanne',
+		'@antoine',
+		'@mira'
+	]
 
 };

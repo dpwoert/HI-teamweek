@@ -59,6 +59,25 @@ export default class ToolDetail extends Component {
 
 	}
 
+	getTeam(data){
+
+		if(!data.teamMembers || data.teamMembers.length === 0){
+			return undefined;
+		}
+
+		return (
+			<div className="row">
+				<div className="small-12 columns">
+					<h4>Team</h4>
+					{data.teamMembers.map((name, i) => {
+						const url = "https://www.twitter.com/" + name;
+						return <p key={i}><a href={url} target="_blank">{name}</a></p>
+					})}
+				</div>
+			</div>
+		);
+	}
+
 	resumeViz(){
 		window.__force.resume();
 	}
@@ -99,25 +118,25 @@ export default class ToolDetail extends Component {
 							</div>
 						</div>
 							<div className="row meta">
-								<div className="small-4 columns">
+								<div className="small-6 medium-4 columns">
 									<h6>Time</h6>
 									<p>{data.time[0]}-{data.time[1]}min</p>
 								</div>
-								<div className="small-4 columns">
+								<div className="small-6 medium-4 columns">
 									<h6>Group Size</h6>
 									<p>{data.group[0]}-{data.group[1]}</p>
 								</div>
-								<div className="small-4 columns">
+								<div className="small-12 medium-4 columns">
 									<h6>Materials</h6>
 									{this.getMaterials(data)}
 								</div>
 							</div>
 							<div className="row meta">
-								<div className="small-4 columns">
+								<div className="small-6 medium-4 columns">
 									<h6>Experience Level</h6>
 									<p>{this.getLevel(data.exp)}</p>
 								</div>
-								<div className="small-4 columns end">
+								<div className="small-6 medium-4 columns end">
 									<h6>Comfort Zone</h6>
 									<p>{this.getLevel(data.comfortZone)}</p>
 								</div>
@@ -130,6 +149,7 @@ export default class ToolDetail extends Component {
 								})}
 							</div>
 						</div>
+						{this.getTeam(data)}
 						<div className="row">
 							<div className="small-12 columns">
 								{this.getReferences(data)}

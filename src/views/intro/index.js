@@ -13,8 +13,8 @@ export default class Intro extends Component {
 					<div className="logos">
 						<span>Made by teams at</span>
 						<div>
-							<img src="images/hyperisland.png" />
-							<img src="images/teamweek.png" />
+							<a href="http://www.hyperisland.com" target="_blank"><img src="images/hyperisland@2x.png" width="140" height="17" /></a>
+							<a href="http://www.teamweek.com" target="_blank"><img src="images/teamweek@2x.png" width="83" height="36" /></a>
 						</div>
 					</div>
 

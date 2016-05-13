@@ -41,6 +41,9 @@ export default {
 		{label: "Icon by Mateo Zlatar", url: 'https://thenounproject.com/mateozlatar/'}
 	],
 
-	attachment: undefined
+	attachment: undefined,
+
+	teamName: '',
+	teamMembers: []
 
 };

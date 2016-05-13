@@ -37,6 +37,14 @@ export default {
 	{label: "Icon by iconsphere", url: 'https://thenounproject.com/iconsphere/'}
 	],
 
-	attachment: undefined
+	attachment: undefined,
+
+	teamName: 'Team Bahamas',
+	teamMembers: [
+		'@itwasrasmussen',
+		'@Ideskafferiet',
+		'@sydneyajohnson',
+		'@LetiziaLodi'
+	]
 
 };

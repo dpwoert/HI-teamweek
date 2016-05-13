@@ -36,6 +36,14 @@ export default {
 		{label: "Hyper Island toolbox", url: 'http://toolbox.hyperisland.com/'}
 	],
 
-	attachment: 'attachments/02_Energizers.pdf'
+	attachment: 'attachments/02_Energizers.pdf',
+
+	teamName: 'Victorious Secret',
+	teamMembers: [
+		'@morley_laura',
+		'@Jvb_nl',
+		'@NatashMcNamara',
+		'@TweetToRoni'
+	]
 
 };
