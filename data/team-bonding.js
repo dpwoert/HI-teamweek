@@ -37,7 +37,7 @@ export default {
 		{label: "teamweek", url: 'http://www.teamweek.com'}
 	],
 
-	attachment: 'attachments/10_Spin_the_Pencil.pdf',
+	attachment: 'attachments/4.pdf',
 
 	teamName: '',
 	teamMembers: []
