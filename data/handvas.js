@@ -41,7 +41,7 @@ export default {
 	],
 
 	hyperlinks: [
-		{label: "Handcanvas", url: 'http://www.hyperisland.com'}
+		{label: "Handcanvas", url: 'http://toolbox.hyperisland.com'}
 	],
 
 	attachment: undefined,
