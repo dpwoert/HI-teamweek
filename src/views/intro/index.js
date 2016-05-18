@@ -21,7 +21,7 @@ export default class Intro extends Component {
 					<div className="verticle-center">
 						<h1>A toolbox to help cross disciplinary teams collaborate</h1>
 						<p>
-						Are you on a brand new team? Does your current team need a boost? The #HITeamweek tools for teams toolbox provides teams with the knowledge and tools to successfully set up team structures and maintain them throughout the course of a team collaboration. The #HITeamWeek toolbox is the outcome of a collaborative effort by Hyper Island UK’s Digital Media Management and Digital Experience Design MA degree students and Teamweek.
+						Are you on a brand new team? Does your current team need a boost? The #HITeamweek tools for teams toolbox provides teams with the knowledge and tools to successfully set up team structures and maintain them throughout the course of a team collaboration. The #HITeamWeek toolbox is the outcome of a 12hr collaborative effort by Hyper Island UK’s Digital Media Management and Digital Experience Design MA degree students and Teamweek.
 						</p>
 					</div>
 
